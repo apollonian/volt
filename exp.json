@@ -1,8 +1,8 @@
 {
-  "name": "volt",
-  "description": "No description",
-  "slug": "volt",
-  "privacy": "public",
+  "name": "Raceday",
+  "description": "Formula E",
+  "slug": "Raceday",
+  "privacy": "unlisted",
   "sdkVersion": "17.0.0",
   "version": "1.0.0",
   "orientation": "portrait",

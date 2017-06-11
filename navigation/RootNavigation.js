@@ -5,8 +5,8 @@ import {
   StackNavigation,
   TabNavigation,
   TabNavigationItem,
-} from '@expo/ex-navigation';
-import { FontAwesome } from '@expo/vector-icons';
+} from '../@expo/ex-navigation';
+import { MaterialIcons } from '../@expo/vector-icons';
 
 import Alerts from '../constants/Alerts';
 import Colors from '../constants/Colors';
@@ -27,20 +27,37 @@ export default class RootNavigation extends React.Component {
       <TabNavigation tabBarHeight={56} initialTab="home">
         <TabNavigationItem
           id="home"
-          renderIcon={isSelected => this._renderIcon('home', isSelected)}>
+          title="My FE"
+          renderIcon={isSelected => this._renderIcon('person', isSelected)}>
           <StackNavigation initialRoute="home" />
         </TabNavigationItem>
 
         <TabNavigationItem
-          id="links"
-          renderIcon={isSelected => this._renderIcon('book', isSelected)}>
-          <StackNavigation initialRoute="links" />
+          id="schedule"
+          title="Schedule"
+          renderIcon={isSelected => this._renderIcon('access-time', isSelected)}>
+          <StackNavigation initialRoute="schedule" />
+        </TabNavigationItem>
+
+        <TabNavigationItem
+          id="map"
+          title="Map"
+          renderIcon={isSelected => this._renderIcon('map', isSelected)}>
+          <StackNavigation initialRoute="map" />
+        </TabNavigationItem>
+
+        <TabNavigationItem
+          id="events"
+          title="Events"
+          renderIcon={isSelected => this._renderIcon('event', isSelected)}>
+          <StackNavigation initialRoute="events" />
         </TabNavigationItem>
 
         <TabNavigationItem
           id="settings"
-          renderIcon={isSelected => this._renderIcon('cog', isSelected)}>
-          <StackNavigation initialRoute="settings" />
+          title="Info"
+          renderIcon={isSelected => this._renderIcon('info', isSelected)}>
+          <StackNavigation initialRoute="info" />
         </TabNavigationItem>
       </TabNavigation>
     );
@@ -48,9 +65,9 @@ export default class RootNavigation extends React.Component {
 
   _renderIcon(name, isSelected) {
     return (
-      <FontAwesome
+      <MaterialIcons
         name={name}
-        size={32}
+        size={24}
         color={isSelected ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
     );
@@ -80,7 +97,7 @@ export default class RootNavigation extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   },
   selectedTab: {
     color: Colors.tabIconSelected,
