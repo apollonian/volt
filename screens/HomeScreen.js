@@ -12,6 +12,13 @@ import {
 
 import { MonoText } from '../components/StyledText';
 
+import ApolloClient, { createNetworkInterface } from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+
+const client = new ApolloClient({
+  newtworkInterface: createNetworkInterface({uri: 'https://api.graph.cool/simple/v1/cj3wjcrmozv0g01659os9btj6'}),
+});
+
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
@@ -22,6 +29,13 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+
+      <ApolloProvider client={client}>
+        <View>
+          <Text>Hello, Expo!</Text>
+        </View>
+      </ApolloProvider>
+
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
