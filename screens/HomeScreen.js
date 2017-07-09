@@ -12,30 +12,14 @@ import {
 
 import { MonoText } from '../components/StyledText';
 
-import ApolloClient, { createNetworkInterface } from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
-
-const client = new ApolloClient({
-  newtworkInterface: createNetworkInterface({uri: 'https://api.graph.cool/simple/v1/cj3wjcrmozv0g01659os9btj6'}),
-});
-
 export default class HomeScreen extends React.Component {
-  static route = {
-    navigationBar: {
-      visible: false,
-    },
+  static navigationOptions = {
+    header: null,
   };
 
   render() {
     return (
       <View style={styles.container}>
-
-      <ApolloProvider client={client}>
-        <View>
-          <Text>Hello, Expo!</Text>
-        </View>
-      </ApolloProvider>
-
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
@@ -79,6 +63,19 @@ export default class HomeScreen extends React.Component {
             </TouchableOpacity>
           </View>
         </ScrollView>
+
+        <View style={styles.tabBarInfoContainer}>
+          <Text style={styles.tabBarInfoText}>
+            This is a tab bar. You can edit it in:
+          </Text>
+
+          <View
+            style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+            <MonoText style={styles.codeHighlightText}>
+              navigation/MainTabNavigator.js
+            </MonoText>
+          </View>
+        </View>
       </View>
     );
   }
@@ -171,8 +168,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    marginBottom: 0,
-    height: 56,
     ...Platform.select({
       ios: {
         shadowColor: 'black',
@@ -186,10 +181,11 @@ const styles = StyleSheet.create({
     }),
     alignItems: 'center',
     backgroundColor: '#fbfbfb',
+    paddingVertical: 20,
   },
   tabBarInfoText: {
     fontSize: 17,
-    color: 'red',
+    color: 'rgba(96,100,109, 1)',
     textAlign: 'center',
   },
   navigationFilename: {
