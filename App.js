@@ -22,6 +22,7 @@ export default class AppContainer extends React.Component {
         fonts: [
           FontAwesome.font,
           { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
+          { 'pathway-gothic-one': require('./assets/fonts/PathwayGothicOne-Regular.ttf') },
         ],
       });
     } catch (e) {

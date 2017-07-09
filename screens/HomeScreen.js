@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import { MonoText } from '../components/StyledText';
+import { MonoText, PathwayGothicText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -71,9 +71,9 @@ export default class HomeScreen extends React.Component {
 
           <View
             style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>
+            <PathwayGothicText style={styles.codeHighlightText}>
               navigation/MainTabNavigator.js
-            </MonoText>
+            </PathwayGothicText>
           </View>
         </View>
       </View>
