@@ -1,47 +1,49 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import BottomNavigation, { Tab } from 'react-native-material-bottom-navigation';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import React, { Component } from 'react'
+import { NavigationComponent } from 'react-native-material-bottom-navigation'
+import { TabNavigator } from 'react-navigation'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <BottomNavigation
-        labelColor="white"
-        rippleColor="white"
-        style={{ height: 56, elevation: 8, position: 'absolute', left: 0, bottom: 0, right: 0 }}
-        onTabChange={(newTabIndex) => console.log(`New Tab at position ${newTabIndex}`)}
-      >
-        <Tab
-          barBackgroundColor="#37474F"
-          label="Home"
-          icon={<Icon size={24} color="white" name="tv" />}
-        />
-        <Tab
-          barBackgroundColor="#00796B"
-          label="Events"
-          icon={<Icon size={24} color="white" name="music-note" />}
-        />
-        <Tab
-          barBackgroundColor="#5D4037"
-          label="Map"
-          icon={<Icon size={24} color="white" name="book" />}
-        />
-        <Tab
-          barBackgroundColor="#3E2723"
-          label="Info"
-          icon={<Icon size={24} color="white" name="collections" />}
-        />
-      </BottomNavigation>
-    );
+import { Events } from './screens/Events'
+import { Info } from './screens/Info'
+import { MapView } from './screens/MapView'
+import { Home } from './screens/Home'
+
+/**
+ * react-navigation's TabNavigator.
+ */
+const App = TabNavigator({
+  Home: { screen: Home },
+  Events: { screen: Events },
+  MapView: { screen: MapView },
+  Info: {screen: Info }
+}, {
+  tabBarComponent: NavigationComponent,
+  tabBarPosition: 'bottom',
+  swipeEnabled: false,
+  animationEnabled: false,
+  tabBarOptions: {
+    bottomNavigationOptions: {
+      labelColor: 'white',
+      rippleColor: 'white',
+      shifting: false,
+      style: {
+        height: 60
+      },
+      tabs: {
+        Home: {
+          barBackgroundColor: '#37474F'
+        },
+        Events: {
+          barBackgroundColor: '#00796B'
+        },
+        MapView: {
+          barBackgroundColor: '#5D4037'
+        },
+        Info: {
+          barBackgroundColor: '#00796B'
+        },
+      }
+    }
   }
-}
+})
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
