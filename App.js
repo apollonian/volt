@@ -26,7 +26,7 @@ const App = TabNavigator({
       rippleColor: 'white',
       shifting: false,
       style: {
-        height: 60
+        height: 56
       },
       tabs: {
         Home: {
