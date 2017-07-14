@@ -1,20 +1,26 @@
-import React, { Component } from 'react'
-import { NavigationComponent } from 'react-native-material-bottom-navigation'
-import { TabNavigator } from 'react-navigation'
+import React, {Component} from 'react'
+import {NavigationComponent} from 'react-native-material-bottom-navigation'
+import {TabNavigator} from 'react-navigation'
+import {Font} from 'expo'
 
-import { Events } from './screens/Events'
-import { Info } from './screens/Info'
-import { MapView } from './screens/MapView'
-import { Home } from './screens/Home'
+import {Events} from './screens/Events'
+import {Info} from './screens/Info'
+import {MapView} from './screens/MapView'
+import {Home} from './screens/Home'
 
-/**
- * react-navigation's TabNavigator.
- */
-const App = TabNavigator({
-  Home: { screen: Home },
-  Events: { screen: Events },
-  MapView: { screen: MapView },
-  Info: {screen: Info }
+const AppNavbar = TabNavigator({
+  Home: {
+    screen: Home
+  },
+  Events: {
+    screen: Events
+  },
+  MapView: {
+    screen: MapView
+  },
+  Info: {
+    screen: Info
+  }
 }, {
   tabBarComponent: NavigationComponent,
   tabBarPosition: 'bottom',
@@ -22,28 +28,26 @@ const App = TabNavigator({
   animationEnabled: false,
   tabBarOptions: {
     bottomNavigationOptions: {
-      labelColor: 'white',
-      rippleColor: 'white',
-      shifting: false,
+      labelColor: '#727272',
+      rippleColor: '#FFF',
+      backgroundColor: '#FFF',
+      shifting: true,
       style: {
-        height: 56
-      },
-      tabs: {
-        Home: {
-          barBackgroundColor: '#37474F'
-        },
-        Events: {
-          barBackgroundColor: '#00796B'
-        },
-        MapView: {
-          barBackgroundColor: '#5D4037'
-        },
-        Info: {
-          barBackgroundColor: '#00796B'
-        },
+        height: 56,
+        borderTopWidth: 0.5,
+        borderTopColor: '#EEEEEE'
       }
     }
   }
 })
+
+class App extends React.Component {
+  componentDidMount() {
+    Font.loadAsync({'pathway-gothic-one': require('./assets/fonts/PathwayGothicOne.ttf')})
+  }
+  render() {
+    return <AppNavbar/>
+  }
+}
 
 export default App

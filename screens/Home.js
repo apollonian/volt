@@ -1,45 +1,46 @@
 import React, {Component} from 'react'
-import {
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  TouchableItem,
-  TouchableHighlight,
-  TouchableNativeFeedback
-} from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import {StyleSheet, Text, View, ScrollView, TouchableNativeFeedback} from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export class Home extends Component {
   static navigationOptions = {
     tabBarLabel: "Home",
-    tabBarIcon: () => <Icon size={24} name="home" color="white"/>
+    tabBarIcon: () => <Icon size={24} name="home" color="#727272"/>
   }
 
   render() {
     return (
       <View style={styles.screen}>
         <View style={styles.screenTab}>
-          <Text style={styles.screenHeading}>Events</Text>
+          <Text style={styles.screenHeading}>EVENTS</Text>
         </View>
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.Card}>
+            <View style={styles.card}>
               <View style={styles.imgblock}></View>
               <TouchableNativeFeedback
                 onPress={this._onPressButton}
-                background={TouchableNativeFeedback.SelectableBackground()}>
-                <View style={[styles.block]}>
-                  <Text style={styles.title}>First Event Name</Text>
-                  <Text style={styles.subtitle}>EVENT VENUE</Text>
-                  <Text style={styles.subtitle}>8:30 to 9:20</Text>
+                background={TouchableNativeFeedback.Ripple('rgba(0, 0, 0, 0.06)', false)}>
+                <View style={styles.block}>
+                  <View style={styles.blockInfo}>
+                    <View style={styles.blockInfoTime}>
+                      <Text style={styles.blockInfoTimeChunk}>14:00</Text>
+                    </View>
+                    <View style={styles.blockInfoEvent}>
+                      <Text style={styles.herotitle}>Federation of Drone Racing</Text>
+                      <Text style={styles.subtitle}>
+                        <Text style={styles.blockInfoTimeDuration}>90min</Text>
+                        &nbsp;&bull;&nbsp;Race Track
+                      </Text>
+                    </View>
+                  </View>
                 </View>
               </TouchableNativeFeedback>
             </View>
           </ScrollView>
         </View>
       </View>
-    );
+    )
   }
 }
 
@@ -50,43 +51,72 @@ const styles = StyleSheet.create({
     flex: 1
   },
 
-  scrollArea: {
-    paddingLeft: 18,
-    paddingRight: 18,
-  },
-
-  imgblock: {
-    height: 200,
-    backgroundColor: 'red',
-    zIndex: 0
-  },
-
   screenTab: {
     height: 56,
-    backgroundColor: '#2B2B3E',
-    justifyContent: 'center'
+    backgroundColor: '#202D3D',
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 4
   },
 
   screenHeading: {
     color: 'white',
-    fontFamily: 'Roboto',
-    fontSize: 18
+    fontFamily: 'pathway-gothic-one',
+    fontSize: 24
+  },
+
+  card: {
+    paddingTop: 40
+  },
+
+  imgblock: {
+    height: 160,
+    backgroundColor: '#2D3645',
+    marginLeft: 32,
+    marginRight: 32,
+    elevation: 12,
+    borderRadius: 6,
+    padding: 0
   },
 
   block: {
-    alignItems: 'center',
     backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 5,
-    marginLeft: 18,
-    // marginRight: 8,
-    marginTop: -4,
-    zIndex: 0,
+    padding: 8,
+    borderRadius: 6,
+    marginLeft: 24,
+    marginRight: 40,
+    marginTop: -150,
+    paddingTop: 150,
+    elevation: 0,
+    height: 240,
     marginBottom: 4
   },
 
-  Card: {
-    // position: 'absolute'
+  blockInfo: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    height: 90
+  },
+
+  blockInfoTime: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  blockInfoEvent: {
+    width: 0,
+    flexGrow: 1,
+    paddingLeft: 24
+  },
+
+  blockInfoTimeChunk: {
+    color: '#343434'
+  },
+
+  blockInfoTimeDuration: {
+    color: '#BDBDBD',
+    fontSize: 13
   },
 
   image: {
@@ -95,19 +125,18 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
 
-  title: {
+  herotitle: {
     color: '#000',
     fontFamily: 'Roboto',
-    fontSize: 15,
-    textAlign: 'center',
-    opacity: 0.7
+    fontSize: 18,
+    opacity: 0.7,
+    flexWrap: 'wrap'
   },
 
   subtitle: {
     color: '#000',
     fontFamily: 'Roboto',
     fontSize: 13,
-    textAlign: 'center',
     opacity: 0.5
   }
-});
+})

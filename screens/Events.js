@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 export class Events extends Component {
   static navigationOptions = {
     tabBarLabel: "Events",
-    tabBarIcon: () => <Icon size={24} name="event" color="white" />
+    tabBarIcon: () => <Icon size={24} name="event" color="#727272" />
   }
 
   render() {
