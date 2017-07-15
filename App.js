@@ -46,11 +46,11 @@ const AppNavbar = TabNavigator(
           Events: {
             activeIcon: <Icon size={24} name="event" color="#212121" />,
           },
-          Info: {
-            activeIcon: <Icon size={24} name="info" color="#212121" />,
-          },
           MapView: {
             activeIcon: <Icon size={24} name="map" color="#212121" />,
+          },
+          Info: {
+            activeIcon: <Icon size={24} name="info" color="#212121" />,
           },
         },
       },
