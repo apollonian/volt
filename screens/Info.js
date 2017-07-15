@@ -11,7 +11,7 @@ export class Info extends Component {
   render() {
     return (
       <View>
-        <Text>Books</Text>
+        <Text>Info</Text>
       </View>
     );
   }

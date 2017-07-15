@@ -11,7 +11,7 @@ export class MapView extends Component {
   render() {
     return (
       <View>
-        <Text>Books</Text>
+        <Text>MapView</Text>
       </View>
     );
   }

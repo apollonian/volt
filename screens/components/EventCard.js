@@ -100,12 +100,6 @@ const styles = StyleSheet.create({
     width: 0,
   },
 
-  image: {
-    // height: 72,
-    // margin: 16,
-    resizeMode: 'contain',
-  },
-
   herotitle: {
     color: '#000',
     flexWrap: 'wrap',
