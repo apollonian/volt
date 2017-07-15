@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, ScrollView } from 'react-native';
-import { EventCard } from './components/EventCard';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TouchableNativeFeedback,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export class Events extends Component {
@@ -33,30 +38,31 @@ export class Events extends Component {
         </View>
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <EventCard
-              eventID={1}
-              eventTime={'16:00'}
-              eventTitle={'Checkered Flag'}
-              eventVenue={'Race Track'}
-              eventDuration={120}
-              eventTags={['race']}
-            />
-            <EventCard
-              eventID={2}
-              eventTime={'18:00'}
-              eventTitle={'Autograph Session'}
-              eventVenue={'Fan Park'}
-              eventDuration={60}
-              eventTags={['fans']}
-            />
-            <EventCard
-              eventID={3}
-              eventTime={'22:00'}
-              eventTitle={'Presentation'}
-              eventVenue={'Podium'}
-              eventDuration={30}
-              eventTags={['race']}
-            />
+            <View style={styles.card}>
+              <View style={styles.imgblock} />
+              <TouchableNativeFeedback
+                onPress={() => this.props.navigation.navigate('EventDetails')}
+                background={TouchableNativeFeedback.Ripple(
+                  'rgba(0, 0, 0, 0.06)',
+                  false
+                )}
+              >
+                <View style={styles.block}>
+                  <View style={styles.blockInfo}>
+                    <View style={styles.blockInfoTime}>
+                      <Text style={styles.blockInfoTimeChunk}>12:00</Text>
+                    </View>
+                    <View style={styles.blockInfoEvent}>
+                      <Text style={styles.herotitle}>Race Grid Align</Text>
+                      <Text style={styles.subtitle}>
+                        <Text style={styles.blockInfoTimeDuration}>120min</Text>
+                        &nbsp;&bull;&nbsp;Race Track
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+              </TouchableNativeFeedback>
+            </View>
           </ScrollView>
         </View>
       </View>
@@ -99,5 +105,75 @@ const styles = StyleSheet.create({
 
   scrollArea: {
     paddingBottom: 56,
+  },
+  card: {
+    paddingTop: 12,
+    paddingBottom: 12,
+  },
+
+  imgblock: {
+    backgroundColor: '#2D3645',
+    borderRadius: 2,
+    elevation: 6,
+    height: 140,
+    padding: 0,
+    marginLeft: 28,
+    marginRight: 28,
+  },
+
+  block: {
+    backgroundColor: '#fff',
+    borderRadius: 2,
+    elevation: 0,
+    marginTop: -130,
+    marginRight: 20,
+    marginLeft: 36,
+    paddingTop: 130,
+  },
+
+  blockInfo: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  },
+
+  blockInfoTime: {
+    flexDirection: 'row',
+    marginTop: 28,
+    marginLeft: 32,
+    marginRight: 0,
+  },
+
+  blockInfoTimeChunk: {
+    color: '#343434',
+  },
+
+  blockInfoTimeDuration: {
+    color: '#BDBDBD',
+    fontSize: 13,
+  },
+
+  blockInfoEvent: {
+    flexGrow: 1,
+    justifyContent: 'center',
+    paddingRight: 8,
+    marginTop: 24,
+    marginBottom: 24,
+    marginLeft: 8,
+    width: 0,
+  },
+
+  herotitle: {
+    color: '#000',
+    flexWrap: 'wrap',
+    fontFamily: 'Roboto',
+    fontSize: 18,
+    opacity: 0.7,
+  },
+
+  subtitle: {
+    color: '#000',
+    fontFamily: 'Roboto',
+    fontSize: 13,
+    opacity: 0.5,
   },
 });
