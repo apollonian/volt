@@ -1,12 +1,12 @@
-import React, {Component} from 'react'
-import {StyleSheet, Text, View, ScrollView, TouchableNativeFeedback} from 'react-native'
-import {EventCard} from './components/EventCard'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { EventCard } from './components/EventCard';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export class Home extends Component {
   static navigationOptions = {
-    tabBarLabel: "Home",
-    tabBarIcon: () => <Icon size={24} name="home" color="#727272"/>
+    tabBarLabel: 'Home',
+    tabBarIcon: () => <Icon size={24} name="home" color="#727272" />,
   };
 
   render() {
@@ -22,23 +22,26 @@ export class Home extends Component {
               eventTime={'16:00'}
               eventTitle={'Checkered Flag'}
               eventVenue={'Race Track'}
-              eventDuration={120}/>
+              eventDuration={120}
+            />
             <EventCard
               val={2}
               eventTime={'18:00'}
               eventTitle={'Autograph Session'}
               eventVenue={'Fan Park'}
-              eventDuration={60}/>
+              eventDuration={60}
+            />
             <EventCard
               val={3}
               eventTime={'22:00'}
               eventTitle={'Presentation'}
               eventVenue={'Podium'}
-              eventDuration={30}/>
+              eventDuration={30}
+            />
           </ScrollView>
         </View>
       </View>
-    )
+    );
   }
 }
 
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
   screen: {
     backgroundColor: '#EEF1F5',
     flex: 1,
-    marginTop: 24
+    marginTop: 24,
   },
 
   screenTab: {
@@ -55,16 +58,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#202D3D',
     elevation: 2,
     height: 56,
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
 
   screenHeading: {
     color: 'white',
     fontFamily: 'Roboto',
-    fontSize: 20
+    fontSize: 20,
   },
 
   scrollArea: {
-    paddingBottom: 56
-  }
-})
+    paddingBottom: 56,
+  },
+});

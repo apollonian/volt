@@ -1,14 +1,18 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import React, { Component } from 'react';
+import { Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export class Events extends Component {
   static navigationOptions = {
-    tabBarLabel: "Events",
-    tabBarIcon: () => <Icon size={24} name="event" color="#727272" />
-  }
+    tabBarLabel: 'Events',
+    tabBarIcon: () => <Icon size={24} name="event" color="#727272" />,
+  };
 
   render() {
-    return <View><Text>Movies & TV</Text></View>
+    return (
+      <View>
+        <Text>Movies & TV</Text>
+      </View>
+    );
   }
 }

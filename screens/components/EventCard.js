@@ -1,27 +1,37 @@
-import React, {Component} from 'react'
-import {StyleSheet, Text, View, TouchableNativeFeedback} from 'react-native'
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, TouchableNativeFeedback } from 'react-native';
 
 export class EventCard extends Component {
-  _onPressButton = (val) => {
-    console.log('Pressed' + val)
-  }
+  _onPressButton = val => {
+    console.log('Pressed' + val);
+  };
 
   render() {
     return (
       <View style={styles.card}>
-        <View style={styles.imgblock}></View>
+        <View style={styles.imgblock} />
         <TouchableNativeFeedback
           onPress={() => this._onPressButton(this.props.val)}
-          background={TouchableNativeFeedback.Ripple('rgba(0, 0, 0, 0.06)', false)}>
+          background={TouchableNativeFeedback.Ripple(
+            'rgba(0, 0, 0, 0.06)',
+            false
+          )}
+        >
           <View style={styles.block}>
             <View style={styles.blockInfo}>
               <View style={styles.blockInfoTime}>
-                <Text style={styles.blockInfoTimeChunk}>{this.props.eventTime}</Text>
+                <Text style={styles.blockInfoTimeChunk}>
+                  {this.props.eventTime}
+                </Text>
               </View>
               <View style={styles.blockInfoEvent}>
-                <Text style={styles.herotitle}>{this.props.eventTitle}</Text>
+                <Text style={styles.herotitle}>
+                  {this.props.eventTitle}
+                </Text>
                 <Text style={styles.subtitle}>
-                  <Text style={styles.blockInfoTimeDuration}>{this.props.eventDuration}min</Text>
+                  <Text style={styles.blockInfoTimeDuration}>
+                    {this.props.eventDuration}min
+                  </Text>
                   &nbsp;&bull;&nbsp;{this.props.eventVenue}
                 </Text>
               </View>
@@ -36,7 +46,7 @@ export class EventCard extends Component {
 const styles = StyleSheet.create({
   card: {
     paddingTop: 12,
-    paddingBottom: 12
+    paddingBottom: 12,
   },
 
   imgblock: {
@@ -46,7 +56,7 @@ const styles = StyleSheet.create({
     height: 140,
     padding: 0,
     marginLeft: 28,
-    marginRight: 28
+    marginRight: 28,
   },
 
   block: {
@@ -56,28 +66,28 @@ const styles = StyleSheet.create({
     marginTop: -130,
     marginRight: 20,
     marginLeft: 36,
-    paddingTop: 130
+    paddingTop: 130,
   },
 
   blockInfo: {
     flexDirection: 'row',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   },
 
   blockInfoTime: {
     flexDirection: 'row',
     marginTop: 28,
     marginLeft: 32,
-    marginRight: 0
+    marginRight: 0,
   },
 
   blockInfoTimeChunk: {
-    color: '#343434'
+    color: '#343434',
   },
 
   blockInfoTimeDuration: {
     color: '#BDBDBD',
-    fontSize: 13
+    fontSize: 13,
   },
 
   blockInfoEvent: {
@@ -87,13 +97,13 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 24,
     marginLeft: 8,
-    width: 0
+    width: 0,
   },
 
   image: {
     // height: 72,
     // margin: 16,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
 
   herotitle: {
@@ -101,13 +111,13 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     fontFamily: 'Roboto',
     fontSize: 18,
-    opacity: 0.7
+    opacity: 0.7,
   },
 
   subtitle: {
     color: '#000',
     fontFamily: 'Roboto',
     fontSize: 13,
-    opacity: 0.5
-  }
-})
+    opacity: 0.5,
+  },
+});
