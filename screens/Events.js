@@ -13,7 +13,7 @@ export class Events extends Component {
     return (
       <View style={styles.screen}>
         <View style={styles.screenTab}>
-          <Text style={styles.screenHeading}>EVENTS</Text>
+          <Text style={styles.screenHeading}>Events</Text>
           {/* <TouchableNativeFeedback
             onPress={() => console.log('Home')}
             background={TouchableNativeFeedback.Ripple(
@@ -34,7 +34,7 @@ export class Events extends Component {
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
             <EventCard
-              val={1}
+              eventID={1}
               eventTime={'16:00'}
               eventTitle={'Checkered Flag'}
               eventVenue={'Race Track'}
@@ -42,7 +42,7 @@ export class Events extends Component {
               eventTags={['race']}
             />
             <EventCard
-              val={2}
+              eventID={2}
               eventTime={'18:00'}
               eventTitle={'Autograph Session'}
               eventVenue={'Fan Park'}
@@ -50,7 +50,7 @@ export class Events extends Component {
               eventTags={['fans']}
             />
             <EventCard
-              val={3}
+              eventID={3}
               eventTime={'22:00'}
               eventTitle={'Presentation'}
               eventVenue={'Podium'}
@@ -65,11 +65,12 @@ export class Events extends Component {
 }
 
 const styles = StyleSheet.create({
-  // Compensate for the status bar by adding a marginTop
+  // Compensate for the status bar by adding a borderTop
   screen: {
     backgroundColor: '#EEF1F5',
     flex: 1,
-    marginTop: 24,
+    borderTopWidth: 24,
+    borderTopColor: '#202D3D',
   },
 
   screenTab: {

@@ -7,11 +7,18 @@ export class EventCard extends Component {
   };
 
   render() {
+    const {
+      eventID,
+      eventDuration,
+      eventTime,
+      eventTitle,
+      eventVenue,
+    } = this.props;
     return (
       <View style={styles.card}>
         <View style={styles.imgblock} />
         <TouchableNativeFeedback
-          onPress={() => this._onPressButton(this.props.val)}
+          onPress={() => this._onPressButton(eventID)}
           background={TouchableNativeFeedback.Ripple(
             'rgba(0, 0, 0, 0.06)',
             false
@@ -21,18 +28,18 @@ export class EventCard extends Component {
             <View style={styles.blockInfo}>
               <View style={styles.blockInfoTime}>
                 <Text style={styles.blockInfoTimeChunk}>
-                  {this.props.eventTime}
+                  {eventTime}
                 </Text>
               </View>
               <View style={styles.blockInfoEvent}>
                 <Text style={styles.herotitle}>
-                  {this.props.eventTitle}
+                  {eventTitle}
                 </Text>
                 <Text style={styles.subtitle}>
                   <Text style={styles.blockInfoTimeDuration}>
-                    {this.props.eventDuration}min
+                    {eventDuration}min
                   </Text>
-                  &nbsp;&bull;&nbsp;{this.props.eventVenue}
+                  &nbsp;&bull;&nbsp;{eventVenue}
                 </Text>
               </View>
             </View>
