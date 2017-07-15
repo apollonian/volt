@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {NavigationComponent} from 'react-native-material-bottom-navigation'
 import {TabNavigator} from 'react-navigation'
-import {Font} from 'expo'
 
 import {Events} from './screens/Events'
 import {Info} from './screens/Info'
@@ -42,9 +41,6 @@ const AppNavbar = TabNavigator({
 })
 
 class App extends React.Component {
-  componentDidMount() {
-    Font.loadAsync({'pathway-gothic-one': require('./assets/fonts/PathwayGothicOne.ttf')})
-  }
   render() {
     return <AppNavbar/>
   }

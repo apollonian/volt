@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import {StyleSheet, Text, View, ScrollView, TouchableNativeFeedback} from 'react-native'
+import {EventCard} from './components/EventCard'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export class Home extends Component {
   static navigationOptions = {
     tabBarLabel: "Home",
     tabBarIcon: () => <Icon size={24} name="home" color="#727272"/>
-  }
+  };
 
   render() {
     return (
@@ -16,27 +17,24 @@ export class Home extends Component {
         </View>
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.card}>
-              <View style={styles.imgblock}></View>
-              <TouchableNativeFeedback
-                onPress={this._onPressButton}
-                background={TouchableNativeFeedback.Ripple('rgba(0, 0, 0, 0.06)', false)}>
-                <View style={styles.block}>
-                  <View style={styles.blockInfo}>
-                    <View style={styles.blockInfoTime}>
-                      <Text style={styles.blockInfoTimeChunk}>14:00</Text>
-                    </View>
-                    <View style={styles.blockInfoEvent}>
-                      <Text style={styles.herotitle}>Federation of Drone Racing</Text>
-                      <Text style={styles.subtitle}>
-                        <Text style={styles.blockInfoTimeDuration}>90min</Text>
-                        &nbsp;&bull;&nbsp;Race Track
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </TouchableNativeFeedback>
-            </View>
+            <EventCard
+              val={1}
+              eventTime={'16:00'}
+              eventTitle={'Checkered Flag'}
+              eventVenue={'Race Track'}
+              eventDuration={120}/>
+            <EventCard
+              val={2}
+              eventTime={'18:00'}
+              eventTitle={'Autograph Session'}
+              eventVenue={'Fan Park'}
+              eventDuration={60}/>
+            <EventCard
+              val={3}
+              eventTime={'22:00'}
+              eventTitle={'Presentation'}
+              eventVenue={'Podium'}
+              eventDuration={30}/>
           </ScrollView>
         </View>
       </View>
@@ -45,98 +43,28 @@ export class Home extends Component {
 }
 
 const styles = StyleSheet.create({
+  // Compensate for the status bar by adding a marginTop
   screen: {
-    marginTop: 24,
     backgroundColor: '#EEF1F5',
-    flex: 1
+    flex: 1,
+    marginTop: 24
   },
 
   screenTab: {
-    height: 56,
-    backgroundColor: '#202D3D',
-    justifyContent: 'center',
     alignItems: 'center',
-    elevation: 4
+    backgroundColor: '#202D3D',
+    elevation: 2,
+    height: 56,
+    justifyContent: 'center'
   },
 
   screenHeading: {
     color: 'white',
-    fontFamily: 'pathway-gothic-one',
-    fontSize: 24
-  },
-
-  card: {
-    paddingTop: 40
-  },
-
-  imgblock: {
-    height: 160,
-    backgroundColor: '#2D3645',
-    marginLeft: 32,
-    marginRight: 32,
-    elevation: 12,
-    borderRadius: 6,
-    padding: 0
-  },
-
-  block: {
-    backgroundColor: '#fff',
-    padding: 8,
-    borderRadius: 6,
-    marginLeft: 24,
-    marginRight: 40,
-    marginTop: -150,
-    paddingTop: 150,
-    elevation: 0,
-    height: 240,
-    marginBottom: 4
-  },
-
-  blockInfo: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    height: 90
-  },
-
-  blockInfoTime: {
-    flexDirection: 'row',
-    alignItems: 'center'
-  },
-
-  blockInfoEvent: {
-    width: 0,
-    flexGrow: 1,
-    paddingLeft: 24
-  },
-
-  blockInfoTimeChunk: {
-    color: '#343434'
-  },
-
-  blockInfoTimeDuration: {
-    color: '#BDBDBD',
-    fontSize: 13
-  },
-
-  image: {
-    margin: 16,
-    height: 72,
-    resizeMode: 'contain'
-  },
-
-  herotitle: {
-    color: '#000',
     fontFamily: 'Roboto',
-    fontSize: 18,
-    opacity: 0.7,
-    flexWrap: 'wrap'
+    fontSize: 20
   },
 
-  subtitle: {
-    color: '#000',
-    fontFamily: 'Roboto',
-    fontSize: 13,
-    opacity: 0.5
+  scrollArea: {
+    paddingBottom: 56
   }
 })
