@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export class EventDetails extends Component {
   render() {
@@ -14,6 +15,22 @@ export class EventDetails extends Component {
     return (
       <View style={styles.screen}>
         <View style={styles.screenTab}>
+          <TouchableNativeFeedback
+            onPress={() => this.props.navigation.goBack()}
+            background={TouchableNativeFeedback.Ripple(
+              'rgba(0, 0, 0, 0.24)',
+              true
+            )}
+          >
+            <View style={styles.filterIconBound}>
+              <Icon
+                size={24}
+                name="arrow-back"
+                color="#FFFFFF"
+                style={styles.filtericon}
+              />
+            </View>
+          </TouchableNativeFeedback>
           <Text style={styles.screenHeading}>
             {eventTitle}
           </Text>
@@ -61,14 +78,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  // filterIconBound: {
-  //   position: 'absolute',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   right: 24,
-  //   height: 56,
-  //   width: 24,
-  // },
+  filterIconBound: {
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    left: 0,
+    height: 56,
+    width: 56,
+  },
 
   screenHeading: {
     color: 'white',
