@@ -66,6 +66,9 @@ export const Root = StackNavigator(
     },
     EventDetails: {
       screen: EventDetails,
+      navigationOptions: {
+        eventName: ({ state }) => `${state.params.eventName}`,
+      },
     },
   },
   {

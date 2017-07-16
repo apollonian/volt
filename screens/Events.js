@@ -7,6 +7,7 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { EventData } from '../assets/EventData';
 
 export class Events extends Component {
   static navigationOptions = {
@@ -15,6 +16,40 @@ export class Events extends Component {
   };
 
   render() {
+    const EventList = EventData.map(event =>
+      <View style={styles.card} key={event.eventID}>
+        <View style={styles.imgblock} />
+        <TouchableNativeFeedback
+          onPress={() => this.props.navigation.navigate('EventDetails', event)}
+          background={TouchableNativeFeedback.Ripple(
+            'rgba(0, 0, 0, 0.06)',
+            false
+          )}
+        >
+          <View style={styles.block}>
+            <View style={styles.blockInfo}>
+              <View style={styles.blockInfoTime}>
+                <Text style={styles.blockInfoTimeChunk}>
+                  {event.eventTime}
+                </Text>
+              </View>
+              <View style={styles.blockInfoEvent}>
+                <Text style={styles.herotitle}>
+                  {event.eventTitle}
+                </Text>
+                <Text style={styles.subtitle}>
+                  <Text style={styles.blockInfoTimeDuration}>
+                    {event.eventDuration}min
+                  </Text>
+                  &nbsp;&bull;&nbsp;{event.eventVenue}
+                </Text>
+              </View>
+            </View>
+          </View>
+        </TouchableNativeFeedback>
+      </View>
+    );
+
     return (
       <View style={styles.screen}>
         <View style={styles.screenTab}>
@@ -38,31 +73,7 @@ export class Events extends Component {
         </View>
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={styles.card}>
-              <View style={styles.imgblock} />
-              <TouchableNativeFeedback
-                onPress={() => this.props.navigation.navigate('EventDetails')}
-                background={TouchableNativeFeedback.Ripple(
-                  'rgba(0, 0, 0, 0.06)',
-                  false
-                )}
-              >
-                <View style={styles.block}>
-                  <View style={styles.blockInfo}>
-                    <View style={styles.blockInfoTime}>
-                      <Text style={styles.blockInfoTimeChunk}>12:00</Text>
-                    </View>
-                    <View style={styles.blockInfoEvent}>
-                      <Text style={styles.herotitle}>Race Grid Align</Text>
-                      <Text style={styles.subtitle}>
-                        <Text style={styles.blockInfoTimeDuration}>120min</Text>
-                        &nbsp;&bull;&nbsp;Race Track
-                      </Text>
-                    </View>
-                  </View>
-                </View>
-              </TouchableNativeFeedback>
-            </View>
+            {EventList}
           </ScrollView>
         </View>
       </View>
@@ -82,7 +93,7 @@ const styles = StyleSheet.create({
   screenTab: {
     alignItems: 'center',
     backgroundColor: '#202D3D',
-    elevation: 2,
+    elevation: 4,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
@@ -106,6 +117,7 @@ const styles = StyleSheet.create({
   scrollArea: {
     paddingBottom: 56,
   },
+
   card: {
     paddingTop: 12,
     paddingBottom: 12,
