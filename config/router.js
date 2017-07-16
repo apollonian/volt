@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Events } from '../screens/Events';
 import { Info } from '../screens/Info';
-import { MapView } from '../screens/MapView';
+import { MapScreen } from '../screens/MapScreen';
 import { Home } from '../screens/Home';
 import { EventDetails } from '../screens/EventDetails';
 
@@ -18,8 +18,8 @@ export const Tabs = TabNavigator(
     Events: {
       screen: Events,
     },
-    MapView: {
-      screen: MapView,
+    MapScreen: {
+      screen: MapScreen,
     },
     Info: {
       screen: Info,
@@ -48,7 +48,7 @@ export const Tabs = TabNavigator(
           Events: {
             activeIcon: <Icon size={24} name="event" color="#343434" />,
           },
-          MapView: {
+          MapScreen: {
             activeIcon: <Icon size={24} name="map" color="#343434" />,
           },
           Info: {
