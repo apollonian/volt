@@ -5,6 +5,7 @@ import {
   Text,
   ScrollView,
   TouchableNativeFeedback,
+  StatusBar,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { EventData } from '../assets/EventData';
@@ -52,6 +53,7 @@ export class Events extends Component {
 
     return (
       <View style={styles.screen}>
+        <StatusBar hidden />
         <View style={styles.screenTab}>
           <Text style={styles.screenHeading}>Events</Text>
           {/* <TouchableNativeFeedback
@@ -82,21 +84,23 @@ export class Events extends Component {
 }
 
 const styles = StyleSheet.create({
-  // Compensate for the status bar by adding a borderTop
   screen: {
     backgroundColor: '#EEF1F5',
     flex: 1,
-    borderTopWidth: 24,
-    borderTopColor: '#202D3D',
+    // Compensate for the status bar by adding a borderTop
+    // borderTopWidth: 24,
+    // borderTopColor: '#FFFFFF',
   },
 
   screenTab: {
     alignItems: 'center',
-    backgroundColor: '#202D3D',
-    elevation: 4,
+    backgroundColor: '#FFFFFF',
+    elevation: 0,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#EEEEEE',
   },
 
   // filterIconBound: {
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
   // },
 
   screenHeading: {
-    color: 'white',
+    color: '#343434',
     fontFamily: 'Roboto',
     fontSize: 18,
   },

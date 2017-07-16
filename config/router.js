@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationComponent } from 'react-native-material-bottom-navigation';
 import { TabNavigator, StackNavigator } from 'react-navigation';
+import CardStackStyleInterpolator from 'react-navigation/src/views/CardStackStyleInterpolator';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Events } from '../screens/Events';
@@ -28,12 +29,12 @@ export const Tabs = TabNavigator(
     tabBarComponent: NavigationComponent,
     tabBarPosition: 'bottom',
     swipeEnabled: false,
-    animationEnabled: false,
+    animationEnabled: true,
     tabBarOptions: {
       bottomNavigationOptions: {
-        labelColor: '#212121',
-        rippleColor: '#FFF',
-        backgroundColor: '#FFF',
+        labelColor: '#343434',
+        rippleColor: '#BDBDBD',
+        backgroundColor: '#FFFFFF',
         shifting: true,
         style: {
           height: 56,
@@ -42,16 +43,16 @@ export const Tabs = TabNavigator(
         },
         tabs: {
           Home: {
-            activeIcon: <Icon size={24} name="home" color="#212121" />,
+            activeIcon: <Icon size={24} name="home" color="#343434" />,
           },
           Events: {
-            activeIcon: <Icon size={24} name="event" color="#212121" />,
+            activeIcon: <Icon size={24} name="event" color="#343434" />,
           },
           MapView: {
-            activeIcon: <Icon size={24} name="map" color="#212121" />,
+            activeIcon: <Icon size={24} name="map" color="#343434" />,
           },
           Info: {
-            activeIcon: <Icon size={24} name="info" color="#212121" />,
+            activeIcon: <Icon size={24} name="info" color="#343434" />,
           },
         },
       },
@@ -66,12 +67,12 @@ export const Root = StackNavigator(
     },
     EventDetails: {
       screen: EventDetails,
-      navigationOptions: {
-        eventName: ({ state }) => `${state.params.eventName}`,
-      },
     },
   },
   {
+    transitionConfig: () => ({
+      screenInterpolator: CardStackStyleInterpolator.forHorizontal,
+    }),
     mode: 'card',
     headerMode: 'none',
   }
