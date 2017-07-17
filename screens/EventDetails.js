@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableNativeFeedback,
+  ScrollView,
+} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export class EventDetails extends Component {
@@ -18,47 +24,65 @@ export class EventDetails extends Component {
 
     return (
       <View style={styles.screen}>
-        <View style={styles.screenTab}>
-          <TouchableNativeFeedback
-            onPress={() => this.props.navigation.goBack()}
-            background={TouchableNativeFeedback.Ripple(
-              'rgba(0, 0, 0, 0.24)',
-              true
-            )}
-          >
-            <View style={styles.filterIconBound}>
-              <Icon
-                size={24}
-                name="arrow-back"
-                color="#727272"
-                style={styles.filtericon}
-              />
+        <ScrollView style={styles.scrollStyle}>
+          <View style={styles.photoBox}>
+            <View style={styles.screenTab}>
+              <TouchableNativeFeedback
+                onPress={() => this.props.navigation.goBack()}
+                background={TouchableNativeFeedback.Ripple(
+                  'rgba(0, 0, 0, 0.24)',
+                  true
+                )}
+              >
+                <View style={styles.backIconBound}>
+                  <Icon
+                    size={24}
+                    name="arrow-back"
+                    color="#FFFFFF"
+                    style={styles.backicon}
+                  />
+                </View>
+              </TouchableNativeFeedback>
+              <Text style={styles.screenHeading} />
             </View>
-          </TouchableNativeFeedback>
-          <Text style={styles.screenHeading}>
-            {eventTitle}
-          </Text>
-        </View>
-        <View>
-          <View>
-            <Text>
-              {eventTime}
-            </Text>
-            <Text>
-              {eventDuration}
-            </Text>
           </View>
-          <View>
-            <Text>
-              {eventTitle}
-            </Text>
+          <View style={styles.infoCard}>
+            <View style={styles.infoCardChunk}>
+              <Icon name="schedule" size={30} color="#BDBDBD" />
+              <View style={{ flexDirection: 'column' }}>
+                <View>
+                  <Text style={styles.infoCardChunkMainText}>
+                    {eventTime}
+                  </Text>
+                </View>
+                <View>
+                  <Text style={styles.infoCardChunkSecondaryText}>
+                    {eventDuration}minutes
+                  </Text>
+                </View>
+              </View>
+            </View>
+            <View style={styles.infoCardChunk}>
+              <Icon name="place" size={30} color="#BDBDBD" />
+              <View style={{ flexDirection: 'column' }}>
+                <View>
+                  <Text style={styles.infoCardChunkMainText}>
+                    {eventVenue}
+                  </Text>
+                </View>
+                <View>
+                  <Text style={styles.infoCardChunkSecondaryText}>Stage</Text>
+                </View>
+              </View>
+            </View>
+            <View style={styles.infoCardChunk}>
+              <Icon name="info-outline" size={30} color="#BDBDBD" />
+              <Text style={styles.infoCardChunkMainText}>
+                {eventDescription}
+              </Text>
+            </View>
           </View>
-          <View>
-            <Text>
-              {eventDescription}
-            </Text>
-          </View>
-        </View>
+        </ScrollView>
       </View>
     );
   }
@@ -66,7 +90,7 @@ export class EventDetails extends Component {
 
 const styles = StyleSheet.create({
   screen: {
-    backgroundColor: '#EEF1F5',
+    backgroundColor: '#FFFFFF',
     flex: 1,
     // Compensate for the status bar by adding a borderTop
     // borderTopWidth: 24,
@@ -75,14 +99,14 @@ const styles = StyleSheet.create({
 
   screenTab: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: 'transparent',
     elevation: 0,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
   },
 
-  filterIconBound: {
+  backIconBound: {
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
@@ -91,9 +115,40 @@ const styles = StyleSheet.create({
     width: 56,
   },
 
-  screenHeading: {
-    color: 'gray',
-    fontFamily: 'Roboto',
-    fontSize: 18,
+  photoBox: {
+    backgroundColor: '#1D2D3D',
+    height: 320,
+    minHeight: 280,
+  },
+
+  infoCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 2,
+    paddingTop: 12,
+    paddingBottom: 16,
+  },
+
+  infoCardChunk: {
+    flexDirection: 'row',
+    paddingTop: 12,
+    paddingRight: 24,
+    paddingBottom: 12,
+    paddingLeft: 32,
+    borderBottomColor: '#EAEAEA',
+    borderBottomWidth: 0.5,
+  },
+
+  infoCardChunkMainText: {
+    color: '#343434',
+    fontSize: 16,
+    paddingRight: 32,
+    paddingLeft: 20,
+  },
+
+  infoCardChunkSecondaryText: {
+    color: '#727272',
+    fontSize: 13,
+    paddingRight: 32,
+    paddingLeft: 20,
   },
 });

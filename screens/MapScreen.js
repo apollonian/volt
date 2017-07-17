@@ -37,11 +37,6 @@ export class MapScreen extends Component {
         style={{ flex: 1 }}
         initialRegion={region}
         pitchEnabled={false}
-        showTraffic={false}
-        showsScale={false}
-        showsBuilding={false}
-        showsPointsOfInterest={false}
-        toolbarEnabled={false}
       />
     );
   }
