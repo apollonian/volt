@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Dimensions } from 'react-native';
+import { Text, View, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { MarkerData } from '../assets/MarkerData';
@@ -48,7 +48,16 @@ export class MapScreen extends Component {
           showsUserLocation
           showCompass
           customMapStyle={customStyle}
-        />
+        >
+          <MapView.Marker
+            coordinate={{ latitude: 48.860363, longitude: 2.313201 }}
+            onPress={() => console.log('Test Marker')}
+          >
+            <MapView.Callout>
+              <Text style={{ color: 'teal' }}>Sample Callout</Text>
+            </MapView.Callout>
+          </MapView.Marker>
+        </MapView>
       </View>
     );
   }
