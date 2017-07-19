@@ -99,7 +99,7 @@
     "import/no-named-as-default-member": "off",
     "import/no-deprecated": "off",
     "import/no-extraneous-dependencies": "off",
-    "import/no-commonjs": "error",
+    "import/no-commonjs": "off",
     "import/no-amd": "error",
     "import/no-nodejs-modules": "off",
     "import/imports-first": "error",

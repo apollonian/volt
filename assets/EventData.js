@@ -8,6 +8,7 @@ export const EventData = [
     eventVenueSecondary: 'Stage',
     eventDuration: 45,
     eventTime: '13:00',
+    eventImage: require('../assets/images/renault-zoe.jpg'),
   },
   {
     eventID: 2,
@@ -18,6 +19,7 @@ export const EventData = [
     eventVenueSecondary: '',
     eventDuration: 20,
     eventTime: '13:10',
+    eventImage: require('../assets/images/renault-zoe.jpg'),
   },
   {
     eventID: 3,
@@ -28,6 +30,7 @@ export const EventData = [
     eventVenueSecondary: '',
     eventDuration: 30,
     eventTime: '13:30',
+    eventImage: require('../assets/images/renault-zoe.jpg'),
   },
   {
     eventID: 4,
@@ -38,5 +41,6 @@ export const EventData = [
     eventVenueSecondary: 'Gaming Arena',
     eventDuration: 15,
     eventTime: '13:45',
+    eventImage: require('../assets/images/allianz-game.jpeg'),
   },
 ];

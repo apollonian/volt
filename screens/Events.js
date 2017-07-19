@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
+  Image,
   StatusBar,
   StyleSheet,
   ScrollView,
@@ -19,11 +20,16 @@ export class Events extends Component {
   render() {
     const EventList = EventData.map(event =>
       <View style={styles.card} key={event.eventID}>
-        <View style={styles.imgblock} />
+        <View style={styles.imageContainer}>
+          <Image
+            source={event.eventImage}
+            style={{ flex: 1, width: null, height: null, borderRadius: 2 }}
+          />
+        </View>
         <TouchableNativeFeedback
           onPress={() => this.props.navigation.navigate('EventDetails', event)}
           background={TouchableNativeFeedback.Ripple(
-            'rgba(0, 0, 0, 0.06)',
+            'rgba(0, 0, 0, 0.08)',
             false
           )}
         >
@@ -58,7 +64,7 @@ export class Events extends Component {
           <TouchableNativeFeedback
             onPress={() => console.log('Home')}
             background={TouchableNativeFeedback.Ripple(
-              'rgba(0, 0, 0, 0.24)',
+              'rgba(0, 0, 0, 0.08)',
               true
             )}
           >
@@ -70,7 +76,7 @@ export class Events extends Component {
           <TouchableNativeFeedback
             onPress={() => console.log('Home')}
             background={TouchableNativeFeedback.Ripple(
-              'rgba(0, 0, 0, 0.24)',
+              'rgba(0, 0, 0, 0.08)',
               true
             )}
           >
@@ -140,10 +146,10 @@ const styles = StyleSheet.create({
     paddingBottom: 12,
   },
 
-  imgblock: {
+  imageContainer: {
     backgroundColor: '#2D3645',
     borderRadius: 2,
-    elevation: 6,
+    elevation: 2,
     height: 140,
     padding: 0,
     marginLeft: 28,

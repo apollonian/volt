@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import {
   Text,
   View,
-  StyleSheet,
-  TouchableNativeFeedback,
-  ScrollView,
+  Image,
   Share,
+  StyleSheet,
+  ScrollView,
+  TouchableNativeFeedback,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -22,6 +23,7 @@ export class EventDetails extends Component {
       eventTitle,
       eventVenueMain,
       eventVenueSecondary,
+      eventImage,
     } = this.props.navigation.state.params;
 
     return (
@@ -31,42 +33,7 @@ export class EventDetails extends Component {
           showsVerticalScrollIndicator={false}
         >
           <View style={styles.photoBox}>
-            <View style={styles.screenTab}>
-              <TouchableNativeFeedback
-                onPress={() => this.props.navigation.goBack()}
-                background={TouchableNativeFeedback.Ripple(
-                  'rgba(0, 0, 0, 0.24)',
-                  true
-                )}
-              >
-                <View style={[styles.iconBase, styles.leftIconBoundOffset]}>
-                  <Icon size={24} name="arrow-back" color="#FFFFFF" />
-                </View>
-              </TouchableNativeFeedback>
-              <TouchableNativeFeedback
-                background={TouchableNativeFeedback.Ripple(
-                  'rgba(0, 0, 0, 0.24)',
-                  true
-                )}
-              >
-                <View style={[styles.iconBase, styles.secondrightIconBound]}>
-                  <Icon size={24} name="map" color="#FFFFFF" />
-                </View>
-              </TouchableNativeFeedback>
-              <TouchableNativeFeedback
-                onPress={() =>
-                  Share.share({ message: '', title: '' }, { dialogTitle: '' })}
-                background={TouchableNativeFeedback.Ripple(
-                  'rgba(0, 0, 0, 0.24)',
-                  true
-                )}
-              >
-                <View style={[styles.iconBase, styles.rightIconBound]}>
-                  <Icon size={24} name="share" color="#FFFFFF" />
-                </View>
-              </TouchableNativeFeedback>
-              <Text style={styles.screenHeading} />
-            </View>
+            <Image source={eventImage} style={styles.photoBoxImage} />
             <View style={styles.eventNameHeroView}>
               <Text style={styles.eventNameHero}>
                 {eventTitle}
@@ -112,6 +79,42 @@ export class EventDetails extends Component {
             </View>
           </View>
         </ScrollView>
+        <View style={styles.screenTab}>
+          <TouchableNativeFeedback
+            onPress={() => this.props.navigation.goBack()}
+            background={TouchableNativeFeedback.Ripple(
+              'rgba(200, 200, 200, 0.12)',
+              true
+            )}
+          >
+            <View style={[styles.iconBase, styles.leftIconBound]}>
+              <Icon size={24} name="arrow-back" color="#FFFFFF" />
+            </View>
+          </TouchableNativeFeedback>
+          <TouchableNativeFeedback
+            background={TouchableNativeFeedback.Ripple(
+              'rgba(200, 200, 200, 0.12)',
+              true
+            )}
+          >
+            <View style={[styles.iconBase, styles.secondrightIconBound]}>
+              <Icon size={24} name="map" color="#FFFFFF" />
+            </View>
+          </TouchableNativeFeedback>
+          <TouchableNativeFeedback
+            onPress={() =>
+              Share.share({ message: '', title: '' }, { dialogTitle: '' })}
+            background={TouchableNativeFeedback.Ripple(
+              'rgba(200, 200, 200, 0.12)',
+              true
+            )}
+          >
+            <View style={[styles.iconBase, styles.rightIconBound]}>
+              <Icon size={24} name="share" color="#FFFFFF" />
+            </View>
+          </TouchableNativeFeedback>
+          <Text style={styles.screenHeading} />
+        </View>
       </View>
     );
   }
@@ -128,11 +131,12 @@ const styles = StyleSheet.create({
 
   screenTab: {
     alignItems: 'center',
-    backgroundColor: 'transparent',
-    elevation: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.01)',
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
+    width: '100%',
+    position: 'absolute',
   },
 
   iconBase: {
@@ -143,26 +147,30 @@ const styles = StyleSheet.create({
     width: 56,
   },
 
-  leftIconBoundOffset: {
-    left: 12,
-    top: 12,
+  leftIconBound: {
+    left: 0,
   },
 
   rightIconBound: {
     right: 0,
-    top: 12,
   },
 
   secondrightIconBound: {
     right: 52,
-    top: 12,
   },
 
   photoBox: {
     backgroundColor: '#1D2D3D',
     height: 320,
     minHeight: 280,
-    justifyContent: 'space-between',
+    justifyContent: 'flex-end',
+  },
+
+  photoBoxImage: {
+    position: 'absolute',
+    height: 320,
+    width: '100%',
+    resizeMode: 'cover',
   },
 
   eventNameHeroView: {
