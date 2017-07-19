@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet,
-  View,
   Text,
+  View,
+  StatusBar,
+  StyleSheet,
   ScrollView,
   TouchableNativeFeedback,
-  StatusBar,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { EventData } from '../assets/EventData';
@@ -42,7 +42,7 @@ export class Events extends Component {
                   <Text style={styles.blockInfoTimeDuration}>
                     {event.eventDuration}min
                   </Text>
-                  &nbsp;&bull;&nbsp;{event.eventVenue}
+                  &nbsp;&bull;&nbsp;{event.eventVenueMain}
                 </Text>
               </View>
             </View>
@@ -55,23 +55,29 @@ export class Events extends Component {
       <View style={styles.screen}>
         <StatusBar hidden />
         <View style={styles.screenTab}>
-          <Text style={styles.screenHeading}>Events</Text>
-          {/* <TouchableNativeFeedback
+          <TouchableNativeFeedback
             onPress={() => console.log('Home')}
             background={TouchableNativeFeedback.Ripple(
               'rgba(0, 0, 0, 0.24)',
               true
             )}
           >
-            <View style={styles.filterIconBound}>
-              <Icon
-                size={20}
-                name="filter-variant"
-                color="#FFFFFF"
-                style={styles.filtericon}
-              />
+            <View style={[styles.iconBase, styles.leftIconBound]}>
+              <Icon size={20} name="view-list" color="#727272" />
             </View>
-          </TouchableNativeFeedback> */}
+          </TouchableNativeFeedback>
+          <Text style={styles.screenHeading}>Events</Text>
+          <TouchableNativeFeedback
+            onPress={() => console.log('Home')}
+            background={TouchableNativeFeedback.Ripple(
+              'rgba(0, 0, 0, 0.24)',
+              true
+            )}
+          >
+            <View style={[styles.iconBase, styles.rightIconBound]}>
+              <Icon size={20} name="filter-list" color="#727272" />
+            </View>
+          </TouchableNativeFeedback>
         </View>
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
@@ -103,14 +109,21 @@ const styles = StyleSheet.create({
     borderBottomColor: '#EEEEEE',
   },
 
-  // filterIconBound: {
-  //   position: 'absolute',
-  //   alignItems: 'center',
-  //   justifyContent: 'center',
-  //   right: 24,
-  //   height: 56,
-  //   width: 24,
-  // },
+  iconBase: {
+    alignItems: 'center',
+    height: 56,
+    justifyContent: 'center',
+    position: 'absolute',
+    width: 56,
+  },
+
+  rightIconBound: {
+    right: 0,
+  },
+
+  leftIconBound: {
+    left: 0,
+  },
 
   screenHeading: {
     color: '#343434',
