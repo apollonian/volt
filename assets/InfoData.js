@@ -2,42 +2,6 @@ import React from 'react';
 import { Text } from 'react-native';
 export const InfoData = [
   {
-    title: <Text>HOW TO GET THERE</Text>,
-    content: (
-      <Text>
-        The site has three entrances: E1: The intersection of Ferris &amp;
-        Sullivan E2: Pier 11 near the Atlantic Basin Ferry Landing E3: The
-        intersection of Imlay &amp; Pioneer St SUBWAY (click here for map) The
-        closest subway stop is Carroll Gardens/Smith St. Take the F train
-        (orange line) to Carroll Gardens Station. There will be a free event
-        shuttle from this station. From Manhattan you can take the 4, D, N, Q
-        and R train to Barclays Center Stop and take a free event shuttle to the
-        venue. Planned Service: G train will run to Hoyt - Shermerhorn but not
-        to Church Ave. It will serve Fulton St, a short walk to Barclays Center.
-        The 2 &amp; 3 trains are not operating outside of Manhattan. RIDESHARE
-        (click here for map) Dropoff will be on Dikeman St. between Ferris &amp;
-        Conover St. There will be no parking or long waiting area for rideshare
-        cars. All traffic must keep moving. SHUTTLE BUS (click here for map)
-        Barclays Center: Guest pick-up is at the bus load in area on Flatbush.
-        Carroll Gardens: Guest pick-up is on the corner of Smith St / 2nd Place.
-        DROP-OFF / PICK UP AREA at VENUE: The bus drop-off pick up area at the
-        venue is closest to e1 entrance. If you have tickets, proceed to the
-        gate. If you need tickets, proceed to the ticket booth at Ferris &amp;
-        Dikeman. Buses will run continuously throughout the day from each
-        location Saturday: 7:30 am - 7:00 pm Sunday: 7:30 am - 6:00 pm CAR There
-        is no parking on site or around the area. We strongly advise you not to
-        drive to this event. BICYCLES (click here for map) There is a free
-        bicycle valet at 202 Coffey Street. Please make sure you take proper
-        care around event traffic. Bicycles can not be left overnight. CITIBIKE
-        The Citibike station on Conover and Coffey street will be attended in
-        order to allow more guests to ride Citibikes to the event. Please note
-        this station is the only attended Citibike station. PUBLIC BUS The B61
-        public bus route takes you through Red Hook to downtown Brooklyn (click
-        here for inbound map) or to Park Slope (click here for outbound map)
-      </Text>
-    ),
-  },
-  {
     title: <Text>FAQ</Text>,
     content: (
       <Text>
@@ -80,6 +44,42 @@ export const InfoData = [
         car, for safety reasons it is not allowed to swap car batteries during a
         race. In order to respect the FIA’s safety norms, the batteries are
         sealed so removing them quickly is impossible.
+      </Text>
+    ),
+  },
+  {
+    title: <Text>HOW TO GET THERE</Text>,
+    content: (
+      <Text>
+        The site has three entrances: E1: The intersection of Ferris &amp;
+        Sullivan E2: Pier 11 near the Atlantic Basin Ferry Landing E3: The
+        intersection of Imlay &amp; Pioneer St SUBWAY (click here for map) The
+        closest subway stop is Carroll Gardens/Smith St. Take the F train
+        (orange line) to Carroll Gardens Station. There will be a free event
+        shuttle from this station. From Manhattan you can take the 4, D, N, Q
+        and R train to Barclays Center Stop and take a free event shuttle to the
+        venue. Planned Service: G train will run to Hoyt - Shermerhorn but not
+        to Church Ave. It will serve Fulton St, a short walk to Barclays Center.
+        The 2 &amp; 3 trains are not operating outside of Manhattan. RIDESHARE
+        (click here for map) Dropoff will be on Dikeman St. between Ferris &amp;
+        Conover St. There will be no parking or long waiting area for rideshare
+        cars. All traffic must keep moving. SHUTTLE BUS (click here for map)
+        Barclays Center: Guest pick-up is at the bus load in area on Flatbush.
+        Carroll Gardens: Guest pick-up is on the corner of Smith St / 2nd Place.
+        DROP-OFF / PICK UP AREA at VENUE: The bus drop-off pick up area at the
+        venue is closest to e1 entrance. If you have tickets, proceed to the
+        gate. If you need tickets, proceed to the ticket booth at Ferris &amp;
+        Dikeman. Buses will run continuously throughout the day from each
+        location Saturday: 7:30 am - 7:00 pm Sunday: 7:30 am - 6:00 pm CAR There
+        is no parking on site or around the area. We strongly advise you not to
+        drive to this event. BICYCLES (click here for map) There is a free
+        bicycle valet at 202 Coffey Street. Please make sure you take proper
+        care around event traffic. Bicycles can not be left overnight. CITIBIKE
+        The Citibike station on Conover and Coffey street will be attended in
+        order to allow more guests to ride Citibikes to the event. Please note
+        this station is the only attended Citibike station. PUBLIC BUS The B61
+        public bus route takes you through Red Hook to downtown Brooklyn (click
+        here for inbound map) or to Park Slope (click here for outbound map)
       </Text>
     ),
   },
