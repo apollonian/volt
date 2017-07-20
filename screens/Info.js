@@ -26,9 +26,7 @@ export class Info extends Component {
   renderContent = section => {
     return (
       <View style={styles.content}>
-        <Text style={styles.contentText}>
-          {section.content}
-        </Text>
+        {section.content}
       </View>
     );
   };
@@ -96,11 +94,6 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    backgroundColor: '#FFFFFF',
     padding: 16,
-  },
-
-  contentText: {
-    fontSize: 16,
   },
 });
