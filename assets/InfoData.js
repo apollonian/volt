@@ -1,49 +1,92 @@
 import React from 'react';
 import { Text } from 'react-native';
+
 export const InfoData = [
   {
     title: <Text>FAQ</Text>,
     content: (
       <Text>
-        1. Can we bring food or drinks in the site? Bringing your own
-        consumption is not permitted on the Hydro-Québec Montréal ePrix site. 2.
-        Can we bring our own chair? To allow everyone to equally enjoy their
-        experience, we do not allow anyone to bring their own chair. 3. Can we
-        re-enter the site if we have exited it? Yes. Your pass is valid for
-        goings and comings. Yes. Every stand seat is reserved. Your seat number
-        is written on your ticket. 4. Are stands seats reserved? 5. Can we watch
-        the race from the eVillage and the activities zones? Screens will be
-        installed to allow everyone in the activities zones to follow the race.
-        You can also directly see the circuit from three of the five activities
-        zones. 6. Is there a designated seating area for people with reduced
-        mobility? a. A section for people with reduced mobility is at the
-        junction betweet De la Gauchetière and Berri since the closest metro
-        exit (station Berri-UQAM) has an elevator. 7. Can my child get in the
-        ePrix site without a ticket? Children aged 5 and over need to have a
-        ticket. Children aged 4 and under accompanied by an adult do not need a
-        ticket. For assigned seats, the child needs to sit on the accompanying
-        adult. 8. I am a resident, business owner or I work in the race’s area,
-        where can I know how I will be affected by the ePrix? All decisions
-        regarding the residents, the circuit, the traffic and the streets are
-        made by the Ville-Marie borough. They will keep you informed until the
-        ePrix. You can also contact them by phone by dialling 311 or by e-mail
-        at formule-e@ville.montreal.qc.ca ABOUT FORMULA E 1. Why are the Formula
-        E races directly in the streets in the middle of the cities? Formula E
-        believes that cities are the natural environment of electric cars and
-        that having the races on street circuits in the middle of the city will
-        promote the use and increase the popularity of electric vehicles. 2. How
-        loud is a Formula E car? Formula E’s cars are hardly louder than an
-        average gasoline powered car (80 dB for 70 dB respectively) and the
-        futurist noise they make come from their tires on the circuit, their
-        aerodynamics and their electric drivetrain. 3. Why do drivers change
-        cars during the race? Why not simply change the battery? Drivers have to
-        change cars during the race because today’s electric technology doesn’t
-        allow a car to go full speed for an hour. One of the purposes of Formula
-        E is, in fact, to accelerate the development of battery technologies and
-        electric drivetrains. As for not changing the battery instead of the
-        car, for safety reasons it is not allowed to swap car batteries during a
-        race. In order to respect the FIA’s safety norms, the batteries are
-        sealed so removing them quickly is impossible.
+        <Text>1. Can we bring food or drinks in the site?</Text>
+        <Text>
+          Bringing your own consumption is not permitted on the Hydro-Québec
+          Montréal ePrix site.
+        </Text>
+        <Text>2. Can we bring our own chair?</Text>
+        <Text>
+          To allow everyone to equally enjoy their experience, we do not allow
+          anyone to bring their own chair.
+        </Text>
+        <Text>3. Can we re-enter the site if we have exited it?</Text>
+        <Text>Yes. Your pass is valid for goings and comings</Text>
+        <Text>4. Are stands seats reserved?</Text>
+        <Text>
+          Yes. Every stand seat is reserved. Your seat number is written on your
+          ticket.
+        </Text>
+        <Text>
+          5. Can we watch the race from the eVillage and the activities zones?
+        </Text>
+        <Text>
+          Screens will be installed to allow everyone in the activities zones to
+          follow the race. You can also directly see the circuit from three of
+          the five activities zones.
+        </Text>
+        <Text>
+          6. Is there a designated seating area for people with reduced
+          mobility?
+        </Text>
+        <Text>
+          a. A section for people with reduced mobility is at the junction
+          betweet De la Gauchetière and Berri since the closest metro exit
+          (station Berri-UQAM) has an elevator.
+        </Text>
+        <Text>7. Can my child get in the ePrix site without a ticket?</Text>
+        <Text>
+          Children aged 5 and over need to have a ticket. Children aged 4 and
+          under accompanied by an adult do not need a ticket. For assigned
+          seats, the child needs to sit on the accompanying adult.
+        </Text>
+        <Text>
+          8. I am a resident, business owner or I work in the race’s area, where
+          can I know how I will be affected by the ePrix?
+        </Text>
+        <Text>
+          All decisions regarding the residents, the circuit, the traffic and
+          the streets are made by the Ville-Marie borough. They will keep you
+          informed until the ePrix. You can also contact them by phone by
+          dialling 311 or by e-mail at formule-e@ville.montreal.qc.ca
+        </Text>
+        <Text>
+          9. Why are the Formula E races directly in the streets in the middle
+          of the cities?
+        </Text>
+        <Text>
+          Formula E believes that cities are the natural environment of electric
+          cars and that having the races on street circuits in the middle of the
+          city will promote the use and increase the popularity of electric
+          vehicles.
+        </Text>
+        <Text>10. How loud is a Formula E car?</Text>
+        <Text>
+          Formula E’s cars are hardly louder than an average gasoline powered
+          car (80 dB for 70 dB respectively) and the futurist noise they make
+          come from their tires on the circuit, their aerodynamics and their
+          electric drivetrain.
+        </Text>
+        <Text>
+          11. Why do drivers change cars during the race? Why not simply change
+          the battery?
+        </Text>
+        <Text>
+          Drivers have to change cars during the race because today’s electric
+          technology doesn’t allow a car to go full speed for an hour. One of
+          the purposes of Formula E is, in fact, to accelerate the development
+          of battery technologies and electric drivetrains. As for not changing
+          the battery instead of the car, for safety reasons it is not allowed
+          to swap car batteries during a race. In order to respect the FIA’s
+          safety norms, the batteries are sealed so removing them quickly is
+          impossible.
+        </Text>
       </Text>
     ),
   },
