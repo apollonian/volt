@@ -27,13 +27,13 @@ export class MapScreen extends Component {
         latitudeDelta: LATITUDE_DELTA,
         longitudeDelta: LONGITUDE_DELTA,
       },
-      dummy: 1,
+      bugfix: 1,
     };
   }
 
-  // This is a fix to tackle a bug in react-native-maps (ref. Issuse 1033)
+  // This is a fix to tackle a bug in react-native-maps (ref. Issue 1033)
   componentWillMount() {
-    setTimeout(() => this.setState({ bugfix: 0 }), 500);
+    setTimeout(() => this.setState({ bugfix: 0 }), 600);
   }
 
   render() {
