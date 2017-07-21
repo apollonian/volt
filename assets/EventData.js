@@ -9,6 +9,8 @@ export const EventData = [
     eventDuration: 45,
     eventTime: '13:00',
     eventImage: require('../assets/images/renault-zoe.jpg'),
+    eventLatitude: 48.862368,
+    eventLongitude: 2.312493,
   },
   {
     eventID: 2,
@@ -20,6 +22,8 @@ export const EventData = [
     eventDuration: 20,
     eventTime: '13:10',
     eventImage: require('../assets/images/renault-zoe.jpg'),
+    eventLatitude: 48.862093,
+    eventLongitude: 2.312515,
   },
   {
     eventID: 3,
@@ -31,6 +35,8 @@ export const EventData = [
     eventDuration: 30,
     eventTime: '13:30',
     eventImage: require('../assets/images/renault-zoe.jpg'),
+    eventLatitude: 48.861718,
+    eventLongitude: 2.31245,
   },
   {
     eventID: 4,
@@ -42,5 +48,7 @@ export const EventData = [
     eventDuration: 15,
     eventTime: '13:45',
     eventImage: require('../assets/images/allianz-game.jpeg'),
+    eventLatitude: 48.861506,
+    eventLongitude: 2.312429,
   },
 ];

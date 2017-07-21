@@ -3,6 +3,7 @@ import { Text, View, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { MarkerData } from '../assets/MarkerData';
+import { EventData } from '../assets/EventData';
 
 const { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
@@ -39,6 +40,22 @@ export class MapScreen extends Component {
   render() {
     const { region } = this.state;
 
+    const MarkerList = EventData.map(event =>
+      <MapView.Marker
+        key={event.eventID}
+        coordinate={{
+          latitude: event.eventLatitude,
+          longitude: event.eventLongitude,
+        }}
+      >
+        <MapView.Callout>
+          <Text style={{ color: 'teal' }}>
+            {event.eventTitle}
+          </Text>
+        </MapView.Callout>
+      </MapView.Marker>
+    );
+
     return (
       <View style={{ paddingTop: this.state.bugfix, flex: 1 }}>
         <MapView
@@ -49,14 +66,7 @@ export class MapScreen extends Component {
           showCompass
           customMapStyle={customStyle}
         >
-          <MapView.Marker
-            coordinate={{ latitude: 48.860363, longitude: 2.313201 }}
-            onPress={() => console.log('Test Marker')}
-          >
-            <MapView.Callout>
-              <Text style={{ color: 'teal' }}>Sample Callout</Text>
-            </MapView.Callout>
-          </MapView.Marker>
+          {MarkerList}
         </MapView>
       </View>
     );
