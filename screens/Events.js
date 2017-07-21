@@ -9,12 +9,17 @@ import {
   TouchableNativeFeedback,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import PopupMenu from '../components/PopupMenu';
 import { EventData } from '../assets/EventData';
 
 export class Events extends Component {
   static navigationOptions = {
     tabBarLabel: 'Events',
     tabBarIcon: () => <Icon size={24} name="event" color="#727272" />,
+  };
+
+  onPopupEvent = (eventName, index) => {
+    console.log(eventName, index);
   };
 
   render() {
@@ -61,29 +66,27 @@ export class Events extends Component {
       <View style={styles.screen}>
         <StatusBar hidden />
         <View style={styles.screenTab}>
-          <TouchableNativeFeedback
-            onPress={() => console.log('Home')}
-            background={TouchableNativeFeedback.Ripple(
-              'rgba(0, 0, 0, 0.08)',
-              true
-            )}
-          >
-            <View style={[styles.iconBase, styles.leftIconBound]}>
-              <Icon size={20} name="view-list" color="#727272" />
-            </View>
-          </TouchableNativeFeedback>
+          <View>
+            <TouchableNativeFeedback
+              onPress={() => console.log('Home')}
+              background={TouchableNativeFeedback.Ripple(
+                'rgba(0, 0, 0, 0.08)',
+                true
+              )}
+            >
+              <View style={[styles.iconBase, styles.leftIconBound]}>
+                <Icon size={22} name="view-list" color="#727272" />
+              </View>
+            </TouchableNativeFeedback>
+          </View>
           <Text style={styles.screenHeading}>Events</Text>
-          <TouchableNativeFeedback
-            onPress={() => console.log('Home')}
-            background={TouchableNativeFeedback.Ripple(
-              'rgba(0, 0, 0, 0.08)',
-              true
-            )}
-          >
-            <View style={[styles.iconBase, styles.rightIconBound]}>
-              <Icon size={20} name="filter-list" color="#727272" />
-            </View>
-          </TouchableNativeFeedback>
+          <PopupMenu
+            actions={['Demos', 'Fun', 'Race']}
+            onPress={this.onPopupEvent}
+            icon={'filter-list'}
+            size={22}
+            color={'#727272'}
+          />
         </View>
         <View style={styles.scrollArea}>
           <ScrollView showsVerticalScrollIndicator={false}>
@@ -110,21 +113,15 @@ const styles = StyleSheet.create({
     elevation: 0,
     flexDirection: 'row',
     height: 56,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     borderBottomWidth: 0.5,
     borderBottomColor: '#EEEEEE',
   },
 
   iconBase: {
     alignItems: 'center',
-    height: 56,
     justifyContent: 'center',
-    position: 'absolute',
     width: 56,
-  },
-
-  rightIconBound: {
-    right: 0,
   },
 
   leftIconBound: {
