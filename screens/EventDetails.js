@@ -17,13 +17,13 @@ export class EventDetails extends Component {
 
   render() {
     const {
-      eventDescription,
-      eventDuration,
       eventTime,
       eventTitle,
-      eventVenueMain,
-      eventVenueSecondary,
       eventImage,
+      eventDuration,
+      eventVenueMain,
+      eventDescription,
+      eventVenueSecondary,
     } = this.props.navigation.state.params;
 
     return (
@@ -35,6 +35,7 @@ export class EventDetails extends Component {
           <View style={styles.photoBox}>
             <Image source={eventImage} style={styles.photoBoxImage} />
             <View style={styles.eventNameHeroView}>
+              <Icon name="star-border" size={24} color="#FFF" />
               <Text style={styles.eventNameHero}>
                 {eventTitle}
               </Text>
@@ -174,13 +175,16 @@ const styles = StyleSheet.create({
   },
 
   eventNameHeroView: {
-    left: 68,
+    alignItems: 'center',
     bottom: 24,
+    flexDirection: 'row',
+    left: 28,
   },
 
   eventNameHero: {
     color: '#FFFFFF',
     fontSize: 24,
+    left: 16,
   },
 
   infoCard: {
