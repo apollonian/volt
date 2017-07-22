@@ -1,6 +1,6 @@
 export const EventData = [
   {
-    eventID: 1,
+    eventID: 0,
     eventTitle: 'Charge Truck Fan Laps',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -9,11 +9,11 @@ export const EventData = [
     eventDuration: 30,
     eventTime: '08:55',
     eventImage: require('../assets/images/charge.jpg'),
-    eventMarkerID: 7,
+    eventMarkerID: 6,
     eventTag: 'Track',
   },
   {
-    eventID: 2,
+    eventID: 1,
     eventTitle: 'Garage Experience I',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -22,11 +22,11 @@ export const EventData = [
     eventDuration: 20,
     eventTime: '10:30',
     eventImage: require('../assets/images/ge-1.jpg'),
-    eventMarkerID: 9,
+    eventMarkerID: 8,
     eventTag: 'Gaming',
   },
   {
-    eventID: 3,
+    eventID: 2,
     eventTitle: 'DJ EJ',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -35,11 +35,11 @@ export const EventData = [
     eventDuration: 30,
     eventTime: '10:30',
     eventImage: require('../assets/images/ej.jpg'),
-    eventMarkerID: 5,
+    eventMarkerID: 4,
     eventTag: 'Music',
   },
   {
-    eventID: 4,
+    eventID: 3,
     eventTitle: 'Electraton Student Race',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -48,11 +48,11 @@ export const EventData = [
     eventDuration: 15,
     eventTime: '13:10',
     eventImage: require('../assets/images/electraton.jpg'),
-    eventMarkerID: 3,
+    eventMarkerID: 2,
     eventTag: 'Track',
   },
   {
-    eventID: 5,
+    eventID: 4,
     eventTitle: 'Garage Experience II',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -61,11 +61,11 @@ export const EventData = [
     eventDuration: 30,
     eventTime: '13:30',
     eventImage: require('../assets/images/ge-2.jpg'),
-    eventMarkerID: 9,
+    eventMarkerID: 8,
     eventTag: 'Gaming',
   },
   {
-    eventID: 6,
+    eventID: 5,
     eventTitle: 'eRace - FE Virtual Racing',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -74,11 +74,11 @@ export const EventData = [
     eventDuration: 15,
     eventTime: '13:45',
     eventImage: require('../assets/images/erace.jpg'),
-    eventMarkerID: 2,
+    eventMarkerID: 1,
     eventTag: 'Gaming',
   },
   {
-    eventID: 7,
+    eventID: 6,
     eventTitle: 'Electric Vehicle Parade',
     eventDescription:
       'Tempor culpa culpa aute velit aliquip dolore. Ullamco commodo velit eu laborum. Eiusmod cupidatat cillum sunt cupidatat in. Adipisicing aliqua culpa consectetur eiusmod mollit aliquip occaecat irure ad enim. Dolore commodo deserunt tempor labore tempor consectetur eu.',
@@ -87,11 +87,11 @@ export const EventData = [
     eventDuration: 30,
     eventTime: '14:00',
     eventImage: require('../assets/images/vehicle-parade.jpg'),
-    eventMarkerID: 7,
+    eventMarkerID: 6,
     eventTag: 'Track',
   },
   {
-    eventID: 8,
+    eventID: 7,
     eventTitle: 'Autograph Session',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -100,11 +100,11 @@ export const EventData = [
     eventDuration: 30,
     eventTime: '14:00',
     eventImage: require('../assets/images/autograph.jpg'),
-    eventMarkerID: 9,
+    eventMarkerID: 8,
     eventTag: 'Gaming',
   },
   {
-    eventID: 9,
+    eventID: 8,
     eventTitle: 'Electraton Celebrity Race',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -117,7 +117,7 @@ export const EventData = [
     eventTag: 'Track',
   },
   {
-    eventID: 10,
+    eventID: 9,
     eventTitle: 'Garage Experience III',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -126,11 +126,11 @@ export const EventData = [
     eventDuration: 20,
     eventTime: '14:30',
     eventImage: require('../assets/images/ge-3.jpg'),
-    eventMarkerID: 9,
+    eventMarkerID: 8,
     eventTag: 'Gaming',
   },
   {
-    eventID: 14,
+    eventID: 10,
     eventTitle: 'Driver Parade',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
@@ -139,7 +139,7 @@ export const EventData = [
     eventDuration: 10,
     eventTime: '15:00',
     eventImage: require('../assets/images/parade.jpg'),
-    eventMarkerID: 7,
+    eventMarkerID: 6,
     eventTag: 'Track',
   },
   {
@@ -152,7 +152,7 @@ export const EventData = [
     eventDuration: 15,
     eventTime: '15:35',
     eventImage: require('../assets/images/mariachi.jpg'),
-    eventMarkerID: 5,
+    eventMarkerID: 4,
     eventTag: 'Music',
   },
   {
@@ -165,7 +165,7 @@ export const EventData = [
     eventDuration: 40,
     eventTime: '17:20',
     eventImage: require('../assets/images/los-amigos-invisibles.jpg'),
-    eventMarkerID: 5,
+    eventMarkerID: 4,
     eventTag: 'Music',
   },
 ];
