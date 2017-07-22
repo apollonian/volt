@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Dimensions } from 'react-native';
+import { Text, View, Dimensions, StyleSheet } from 'react-native';
 import MapView from 'react-native-maps';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { MarkerData } from '../assets/MarkerData';
@@ -49,23 +49,12 @@ export class MapScreen extends Component {
   showCalloutCard = () => {
     if (this.state.showCalloutMarkerCard)
       return (
-        <View
-          style={{
-            backgroundColor: '#FFFFFF',
-            height: 120,
-            marginLeft: 24,
-            marginRight: 24,
-            marginBottom: 60,
-            left: 0,
-            width: width - 48,
-            position: 'absolute',
-            bottom: 24,
-            borderRadius: 2,
-            elevation: 1,
-          }}
-        >
-          <Text>
+        <View style={styles.calloutCard}>
+          <Text style={styles.cardTitleText}>
             {MarkerData[this.state.calloutMarkerID].markerTitle}
+          </Text>
+          <Text style={styles.cardDescriptionText}>
+            {MarkerData[this.state.calloutMarkerID].markerDescription}
           </Text>
         </View>
       );
@@ -84,15 +73,20 @@ export class MapScreen extends Component {
         }}
       >
         <MapView.Callout>
-          <Text>
-            {marker.markerTitle}
-          </Text>
+          <View>
+            <Text style={styles.calloutTitleText}>
+              {marker.markerTitle}
+            </Text>
+          </View>
         </MapView.Callout>
       </MapView.Marker>
     );
 
     return (
       <View style={{ paddingTop: this.state.bugfix, flex: 1 }}>
+        <View style={styles.screenTab}>
+          <Text style={styles.screenHeading}>Map</Text>
+        </View>
         <MapView
           style={{ flex: 1 }}
           initialRegion={region}
@@ -112,6 +106,50 @@ export class MapScreen extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  screenTab: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    elevation: 0,
+    flexDirection: 'row',
+    height: 56,
+    justifyContent: 'center',
+    borderBottomWidth: 0.5,
+    borderBottomColor: '#EEEEEE',
+  },
+
+  screenHeading: {
+    color: '#343434',
+    fontFamily: 'Roboto',
+    fontSize: 18,
+  },
+
+  calloutCard: {
+    backgroundColor: '#FFFFFF',
+    padding: 16,
+    marginLeft: 24,
+    marginRight: 24,
+    marginBottom: 60,
+    left: 0,
+    width: width - 48,
+    position: 'absolute',
+    bottom: 24,
+    borderRadius: 4,
+    elevation: 1,
+  },
+
+  cardTitleText: {
+    fontSize: 16,
+    marginTop: 4,
+    marginBottom: 8,
+  },
+
+  cardDescriptionText: {
+    fontSize: 14,
+    lineHeight: 20,
+  },
+});
 
 const customStyle = [
   {
