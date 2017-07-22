@@ -11,6 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import PopupMenu from '../components/PopupMenu';
 import { EventData } from '../assets/EventData';
+let filterTags = [];
 
 export class Events extends Component {
   static navigationOptions = {
@@ -18,20 +19,40 @@ export class Events extends Component {
     tabBarIcon: () => <Icon size={24} name="event" color="#727272" />,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      filter: 'All',
+    };
+  }
+
+  componentWillMount = () => {
+    this.fillFilterTags();
+  };
+
   fillFilterTags = () => {
-    let filterTags = [];
+    filterTags.push('All');
     EventData.forEach(item => {
       filterTags.push(item.eventTag);
     });
-    return [...new Set(filterTags)].sort();
+    filterTags = [...new Set(filterTags)].sort();
+    console.log(filterTags);
   };
 
-  onPopupEvent = (eventName, index) => {
-    console.log(eventName, index);
+  onPopupEvent = (e, index = 0) => {
+    this.setState({
+      filter: filterTags[index],
+    });
   };
 
   render() {
-    const EventList = EventData.map(event =>
+    console.log(this.state);
+    let EventList = EventData.filter(
+      event =>
+        'All' === this.state.filter
+          ? true
+          : event.eventTag === this.state.filter ? true : false
+    ).map(event =>
       <View style={styles.card} key={event.eventID}>
         <View style={styles.imageContainer}>
           <Image
@@ -89,7 +110,7 @@ export class Events extends Component {
           </View>
           <Text style={styles.screenHeading}>Events</Text>
           <PopupMenu
-            actions={this.fillFilterTags()}
+            actions={filterTags}
             onPress={this.onPopupEvent}
             icon={'filter-list'}
             size={22}

@@ -43,6 +43,20 @@ export const EventData = [
   },
   {
     eventID: 4,
+    eventTitle: 'BrightLights - Music',
+    eventDescription:
+      'Dolore nisi incididunt reprehen eu Lorem eu nulla ullamco enim. Velit velit anim non laboris dolore aliqua aute exercitation amet proident dolore aliquip. In enim dolore consectetur in enim deserunt laborum adipisicing magna magna officia in. Tempor nulla officia laborum incididunt commodo.',
+    eventVenueMain: 'Allianz eVillage',
+    eventVenueSecondary: 'Stage',
+    eventDuration: 45,
+    eventTime: '13:00',
+    eventImage: require('../assets/images/renault-zoe.jpg'),
+    eventLatitude: 48.862368,
+    eventLongitude: 2.312493,
+    eventTag: 'Fun',
+  },
+  {
+    eventID: 5,
     eventTitle: 'eRace - FE Virtual Racing',
     eventDescription:
       'Fugiat culpa aliquip incididunt incididunt cillum nisi magna ea aute in eu. Qui deserunt proident voluptate elit. Officia aute labore reprehenderit exercitation labore do tempor. Excepteur anim sunt cupidatat qui incididunt laboris occaecat id minim. Nisi aliqua incididunt pariatur aliqua pariatur dolore cillum do non veniam sint.',
