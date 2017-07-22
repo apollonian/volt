@@ -18,6 +18,14 @@ export class Events extends Component {
     tabBarIcon: () => <Icon size={24} name="event" color="#727272" />,
   };
 
+  fillFilterTags = () => {
+    let filterTags = [];
+    EventData.forEach(item => {
+      filterTags.push(item.eventTag);
+    });
+    return [...new Set(filterTags)].sort();
+  };
+
   onPopupEvent = (eventName, index) => {
     console.log(eventName, index);
   };
@@ -81,7 +89,7 @@ export class Events extends Component {
           </View>
           <Text style={styles.screenHeading}>Events</Text>
           <PopupMenu
-            actions={['Demos', 'Fun', 'Race']}
+            actions={this.fillFilterTags()}
             onPress={this.onPopupEvent}
             icon={'filter-list'}
             size={22}
