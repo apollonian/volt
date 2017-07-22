@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Image, StyleSheet, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { ScheduleData } from '../assets/ScheduleData';
+import { ScheduleData } from '../assets/Data';
 
 export class Home extends Component {
   static navigationOptions = {

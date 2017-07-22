@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import PopupMenu from '../components/PopupMenu';
-import { EventData } from '../assets/EventData';
+import { EventData } from '../assets/Data';
 let filterTags = [];
 
 export class Events extends Component {
@@ -93,7 +93,7 @@ export class Events extends Component {
         <View style={styles.screenTab}>
           <View>
             <TouchableNativeFeedback
-              onPress={() => console.log('Home')}
+              onPress={() => console.log('TODO')}
               background={TouchableNativeFeedback.Ripple(
                 'rgba(0, 0, 0, 0.08)',
                 true
