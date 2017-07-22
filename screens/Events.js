@@ -24,11 +24,8 @@ export class Events extends Component {
     this.state = {
       filter: 'All',
     };
-  }
-
-  componentWillMount = () => {
     this.fillFilterTags();
-  };
+  }
 
   fillFilterTags = () => {
     filterTags.push('All');
@@ -36,7 +33,6 @@ export class Events extends Component {
       filterTags.push(item.eventTag);
     });
     filterTags = [...new Set(filterTags)].sort();
-    console.log(filterTags);
   };
 
   onPopupEvent = (e, index = 0) => {
@@ -46,7 +42,6 @@ export class Events extends Component {
   };
 
   render() {
-    console.log(this.state);
     let EventList = EventData.filter(
       event =>
         'All' === this.state.filter

@@ -3,7 +3,6 @@ import { Text, View, Dimensions } from 'react-native';
 import MapView from 'react-native-maps';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { MarkerData } from '../assets/MarkerData';
-import { EventData } from '../assets/EventData';
 
 const { width, height } = Dimensions.get('window');
 const ASPECT_RATIO = width / height;
@@ -40,17 +39,17 @@ export class MapScreen extends Component {
   render() {
     const { region } = this.state;
 
-    const MarkerList = EventData.map(event =>
+    const MarkerList = MarkerData.map(marker =>
       <MapView.Marker
-        key={event.eventID}
+        key={marker.markerID}
         coordinate={{
-          latitude: event.eventLatitude,
-          longitude: event.eventLongitude,
+          latitude: marker.markerLatitude,
+          longitude: marker.markerLongitude,
         }}
       >
         <MapView.Callout>
-          <Text style={{ color: 'teal' }}>
-            {event.eventTitle}
+          <Text>
+            {marker.markerTitle}
           </Text>
         </MapView.Callout>
       </MapView.Marker>
@@ -62,6 +61,7 @@ export class MapScreen extends Component {
           style={{ flex: 1 }}
           initialRegion={region}
           pitchEnabled={false}
+          moveOnMarkerPress
           showsUserLocation
           showCompass
           customMapStyle={customStyle}
@@ -75,10 +75,10 @@ export class MapScreen extends Component {
 
 const customStyle = [
   {
-    elementType: 'labels',
+    elementType: 'geometry',
     stylers: [
       {
-        visibility: 'simplified',
+        color: '#f5f5f5',
       },
     ],
   },
@@ -91,7 +91,24 @@ const customStyle = [
     ],
   },
   {
-    elementType: 'labels.text',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#616161',
+      },
+    ],
+  },
+  {
+    elementType: 'labels.text.stroke',
+    stylers: [
+      {
+        color: '#f5f5f5',
+      },
+    ],
+  },
+  {
+    featureType: 'administrative.land_parcel',
+    elementType: 'labels',
     stylers: [
       {
         visibility: 'off',
@@ -100,45 +117,24 @@ const customStyle = [
   },
   {
     featureType: 'administrative.land_parcel',
+    elementType: 'labels.text.fill',
     stylers: [
       {
-        visibility: 'off',
+        color: '#bdbdbd',
       },
     ],
   },
   {
-    featureType: 'administrative.neighborhood',
+    featureType: 'poi',
+    elementType: 'geometry',
     stylers: [
       {
-        color: '#ffeb3b',
+        color: '#eeeeee',
       },
     ],
   },
   {
-    featureType: 'landscape.man_made',
-    stylers: [
-      {
-        lightness: 20,
-      },
-      {
-        visibility: 'simplified',
-      },
-      {
-        weight: 6.5,
-      },
-    ],
-  },
-  {
-    featureType: 'landscape.man_made',
-    elementType: 'labels.icon',
-    stylers: [
-      {
-        visibility: 'off',
-      },
-    ],
-  },
-  {
-    featureType: 'landscape.man_made',
+    featureType: 'poi',
     elementType: 'labels.text',
     stylers: [
       {
@@ -147,19 +143,38 @@ const customStyle = [
     ],
   },
   {
-    featureType: 'poi.business',
+    featureType: 'poi',
+    elementType: 'labels.text.fill',
     stylers: [
       {
-        visibility: 'off',
+        color: '#757575',
       },
     ],
   },
   {
     featureType: 'poi.park',
-    elementType: 'labels.text',
+    elementType: 'geometry',
     stylers: [
       {
-        visibility: 'off',
+        color: '#e5e5e5',
+      },
+    ],
+  },
+  {
+    featureType: 'poi.park',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#9e9e9e',
+      },
+    ],
+  },
+  {
+    featureType: 'road',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#ffffff',
       },
     ],
   },
@@ -173,6 +188,24 @@ const customStyle = [
     ],
   },
   {
+    featureType: 'road.arterial',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#757575',
+      },
+    ],
+  },
+  {
+    featureType: 'road.highway',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#dadada',
+      },
+    ],
+  },
+  {
     featureType: 'road.highway',
     elementType: 'labels',
     stylers: [
@@ -182,10 +215,73 @@ const customStyle = [
     ],
   },
   {
+    featureType: 'road.highway',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#616161',
+      },
+    ],
+  },
+  {
     featureType: 'road.local',
     stylers: [
       {
         visibility: 'off',
+      },
+    ],
+  },
+  {
+    featureType: 'road.local',
+    elementType: 'labels',
+    stylers: [
+      {
+        visibility: 'off',
+      },
+    ],
+  },
+  {
+    featureType: 'road.local',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#9e9e9e',
+      },
+    ],
+  },
+  {
+    featureType: 'transit.line',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#e5e5e5',
+      },
+    ],
+  },
+  {
+    featureType: 'transit.station',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#eeeeee',
+      },
+    ],
+  },
+  {
+    featureType: 'water',
+    elementType: 'geometry',
+    stylers: [
+      {
+        color: '#c9c9c9',
+      },
+    ],
+  },
+  {
+    featureType: 'water',
+    elementType: 'labels.text.fill',
+    stylers: [
+      {
+        color: '#9e9e9e',
       },
     ],
   },

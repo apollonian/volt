@@ -176,9 +176,11 @@ const styles = StyleSheet.create({
 
   eventNameHeroView: {
     alignItems: 'center',
-    bottom: 24,
+    paddingBottom: 24,
+    paddingTop: 24,
     flexDirection: 'row',
-    left: 28,
+    paddingLeft: 28,
+    backgroundColor: 'rgba(0, 0, 0, 0.1)',
   },
 
   eventNameHero: {
