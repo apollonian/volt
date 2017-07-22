@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   Text,
   View,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export class EventDetails extends Component {
+export class EventDetails extends PureComponent {
   static navigationOptions = {
     gesturesEnabled: true,
   };
@@ -93,6 +93,7 @@ export class EventDetails extends Component {
             </View>
           </TouchableNativeFeedback>
           <TouchableNativeFeedback
+            onPress={() => this.props.navigation.navigate('MapScreen')}
             background={TouchableNativeFeedback.Ripple(
               'rgba(200, 200, 200, 0.12)',
               true
@@ -104,7 +105,13 @@ export class EventDetails extends Component {
           </TouchableNativeFeedback>
           <TouchableNativeFeedback
             onPress={() =>
-              Share.share({ message: '', title: '' }, { dialogTitle: '' })}
+              Share.share(
+                {
+                  message: 'Check out this event: ' + eventTitle + '.',
+                  title: eventTitle,
+                },
+                { dialogTitle: 'Share this Formula E Activity!' }
+              )}
             background={TouchableNativeFeedback.Ripple(
               'rgba(200, 200, 200, 0.12)',
               true
@@ -132,7 +139,6 @@ const styles = StyleSheet.create({
 
   screenTab: {
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.01)',
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',

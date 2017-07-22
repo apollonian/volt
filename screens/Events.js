@@ -24,15 +24,16 @@ export class Events extends Component {
     this.state = {
       filter: 'All',
     };
-    this.fillFilterTags();
   }
 
   fillFilterTags = () => {
+    filterTags = [];
     filterTags.push('All');
     EventData.forEach(item => {
       filterTags.push(item.eventTag);
     });
     filterTags = [...new Set(filterTags)].sort();
+    return filterTags;
   };
 
   onPopupEvent = (e, index = 0) => {
@@ -105,7 +106,7 @@ export class Events extends Component {
           </View>
           <Text style={styles.screenHeading}>Events</Text>
           <PopupMenu
-            actions={filterTags}
+            actions={this.fillFilterTags()}
             onPress={this.onPopupEvent}
             icon={'filter-list'}
             size={22}

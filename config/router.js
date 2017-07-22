@@ -35,7 +35,7 @@ export const Tabs = TabNavigator(
         labelColor: '#343434',
         rippleColor: '#BDBDBD',
         backgroundColor: '#FFFFFF',
-        shifting: true,
+        shifting: false,
         style: {
           height: 56,
           borderTopWidth: 0.5,

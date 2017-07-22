@@ -28,6 +28,8 @@ export class MapScreen extends Component {
         longitudeDelta: LONGITUDE_DELTA,
       },
       bugfix: 1,
+      showCalloutMarkerCard: false,
+      calloutMarkerID: 0,
     };
   }
 
@@ -36,12 +38,46 @@ export class MapScreen extends Component {
     setTimeout(() => this.setState({ bugfix: 0 }), 600);
   }
 
+  markerPressed = markerID => {
+    this.setState({
+      calloutMarkerID: markerID,
+      showCalloutMarkerCard: true,
+    });
+    console.log(this.state);
+  };
+
+  showCalloutCard = () => {
+    if (this.state.showCalloutMarkerCard)
+      return (
+        <View
+          style={{
+            backgroundColor: '#FFFFFF',
+            height: 120,
+            marginLeft: 24,
+            marginRight: 24,
+            marginBottom: 60,
+            left: 0,
+            width: width - 48,
+            position: 'absolute',
+            bottom: 24,
+            borderRadius: 2,
+            elevation: 1,
+          }}
+        >
+          <Text>
+            {MarkerData[this.state.calloutMarkerID].markerTitle}
+          </Text>
+        </View>
+      );
+  };
+
   render() {
     const { region } = this.state;
 
     const MarkerList = MarkerData.map(marker =>
       <MapView.Marker
         key={marker.markerID}
+        onPress={() => this.markerPressed(marker.markerID)}
         coordinate={{
           latitude: marker.markerLatitude,
           longitude: marker.markerLongitude,
@@ -65,9 +101,13 @@ export class MapScreen extends Component {
           showsUserLocation
           showCompass
           customMapStyle={customStyle}
+          onPress={() => {
+            this.setState({ showCalloutMarkerCard: false });
+          }}
         >
           {MarkerList}
         </MapView>
+        {this.showCalloutCard()}
       </View>
     );
   }
