@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.2.0",
+    "eslint": "^4.3.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-plugin-flowtype": "^2.35.0",
@@ -12,9 +12,9 @@
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^2.3.2",
-    "jest-expo": "~18.0.0",
+    "jest-expo": "^19.0.0",
     "prettier": "^1.5.3",
-    "react-native-scripts": "0.0.40",
+    "react-native-scripts": "^0.0.50",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
