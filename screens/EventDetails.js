@@ -93,7 +93,7 @@ export class EventDetails extends PureComponent {
                 </View>
               </View>
             </View>
-            <View style={styles.infoCardChunk}>
+            <View style={[styles.infoCardChunk, { paddingBottom: 32 }]}>
               <Icon
                 name="info-outline"
                 size={24}
