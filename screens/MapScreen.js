@@ -120,9 +120,9 @@ const styles = StyleSheet.create({
 
   screenHeading: {
     color: '#252525',
-    fontFamily: 'Roboto',
     fontSize: 14,
     fontWeight: '500',
+    fontFamily: 'Roboto',
   },
 
   calloutCard: {
