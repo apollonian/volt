@@ -201,12 +201,13 @@ const styles = StyleSheet.create({
   },
 
   blockInfoTimeChunk: {
-    color: '#343434',
+    color: '#505050',
+    fontWeight: '500',
   },
 
   blockInfoTimeDuration: {
-    color: '#BDBDBD',
-    fontSize: 13,
+    color: '#757575',
+    fontSize: 14,
   },
 
   blockInfoEvent: {
@@ -220,17 +221,16 @@ const styles = StyleSheet.create({
   },
 
   herotitle: {
-    color: '#000',
+    color: '#252525',
     flexWrap: 'wrap',
     fontSize: 18,
-    opacity: 0.7,
     fontFamily: 'Roboto',
+    marginBottom: 2,
   },
 
   subtitle: {
-    color: '#000',
-    fontSize: 13,
-    opacity: 0.5,
+    color: '#505050',
+    fontSize: 14,
     fontFamily: 'Roboto',
   },
 });

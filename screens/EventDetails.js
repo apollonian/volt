@@ -48,7 +48,7 @@ export class EventDetails extends PureComponent {
                 name="schedule"
                 size={24}
                 style={{ paddingTop: 6 }}
-                color="#BDBDBD"
+                color="#909090"
               />
               <View style={{ flexDirection: 'column' }}>
                 <View>
@@ -73,7 +73,7 @@ export class EventDetails extends PureComponent {
                 name="place"
                 size={24}
                 style={{ paddingTop: 6 }}
-                color="#BDBDBD"
+                color="#909090"
               />
               <View style={{ flexDirection: 'column' }}>
                 <View>
@@ -98,7 +98,7 @@ export class EventDetails extends PureComponent {
                 name="info-outline"
                 size={24}
                 style={{ paddingTop: 6 }}
-                color="#BDBDBD"
+                color="#909090"
               />
               <Text style={styles.infoCardChunkMainText}>
                 {eventDescription}
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
   },
 
   infoCardChunkMainText: {
-    color: '#343434',
+    color: '#252525',
     fontSize: 16,
     lineHeight: 26,
     paddingRight: 32,
@@ -256,9 +256,9 @@ const styles = StyleSheet.create({
   },
 
   infoCardChunkSecondaryText: {
-    color: '#727272',
+    color: '#505050',
     fontSize: 14,
-    paddingRight: 32,
+    paddingRight: 24,
     paddingLeft: 16,
     fontFamily: 'Roboto',
   },
