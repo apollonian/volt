@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     backgroundColor: 'rgba(255, 255, 255, 1)',
     borderRadius: 2,
-    top: 245,
+    top: 225,
   },
 
   RaceTitleText: {
@@ -146,7 +146,7 @@ const styles = StyleSheet.create({
   photoBoxImage: {
     resizeMode: 'cover',
     width: '100%',
-    height: 300,
+    height: 280,
   },
 
   card: {
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   secondaryText: {
     lineHeight: 26,
     fontSize: 16,
-    marginTop: 2,
+    marginTop: 1,
     marginBottom: 16,
     fontFamily: 'Roboto',
   },
