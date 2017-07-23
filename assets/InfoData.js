@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     marginTop: 16,
     marginBottom: 8,
+    fontFamily: 'Roboto',
   },
 
   secondaryText: {
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 2,
     marginBottom: 16,
+    fontFamily: 'Roboto',
   },
 });
 
