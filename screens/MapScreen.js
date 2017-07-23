@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     left: 0,
     width: width - 48,
     position: 'absolute',
-    bottom: 24,
+    bottom: 40,
     borderRadius: 4,
     elevation: 1,
   },
@@ -144,11 +144,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 4,
     marginBottom: 8,
+    fontWeight: '500',
+    fontFamily: 'Roboto',
   },
 
   cardDescriptionText: {
-    fontSize: 14,
-    lineHeight: 20,
+    fontSize: 16,
+    lineHeight: 26,
+    fontFamily: 'Roboto',
   },
 });
 
