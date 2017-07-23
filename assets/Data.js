@@ -241,7 +241,7 @@ export const MarkerData = [
 export const ScheduleData = [
   {
     scheduleID: 0,
-    scheduleTitle: 'Practise I',
+    scheduleTitle: 'Practice I',
     scheduleStart: '08:00',
     scheduleEnd: '08:45',
   },
@@ -253,7 +253,7 @@ export const ScheduleData = [
   },
   {
     scheduleID: 2,
-    scheduleTitle: 'Practise II',
+    scheduleTitle: 'Practice II',
     scheduleStart: '10:30',
     scheduleEnd: '11:00',
   },

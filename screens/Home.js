@@ -36,12 +36,12 @@ export class Home extends Component {
               Mexico City ePrix
             </Text>
             <Text style={styles.RaceVenueText}>
-              Autodromo Hermanos Rodríguez
+              Autòdromo Hermanos Rodríguez
             </Text>
           </View>
           <View>
             <Image
-              source={require('../assets/images/hero-2.jpg')}
+              source={require('../assets/images/hero-1.jpg')}
               style={styles.photoBoxImage}
             />
           </View>
@@ -50,24 +50,26 @@ export class Home extends Component {
           </Text>
           {ScheduleList}
           <Text style={styles.sectionHeading}>MY FAVORITES</Text>
-          <View style={[styles.card, { alignItems: 'center' }]}>
-            <Text>Your starred activities will appear here</Text>
-            <Text>Go and Explore!</Text>
+          <View style={[styles.card, { alignItems: 'center', paddingTop: 24 }]}>
+            <Icon size={24} name="star" color="#727272" />
+            <Text style={styles.secondaryText}>
+              Starred activities will appear here!
+            </Text>
           </View>
-          <Text style={styles.sectionHeading}>ABOUT MEXICO ePRIX</Text>
+          <Text style={styles.sectionHeading}>ABOUT</Text>
           <View style={[styles.card, { marginBottom: 24 }]}>
-            <Text>
+            <Text style={styles.secondaryText}>
               Formula E will charge its way through one of the most vibrant
               cities to race at the 2017 FIA Formula E Julius Baer Mexico City
               ePrix.
             </Text>
-            <Text>
+            <Text style={styles.secondaryText}>
               The passion for racing hangs in the air at Mexico's most famous
               race track. Situated inside the city limits, the Autódromo
               Hermanos Rodríguez is named after the country's most celebrated
               drivers making victory here even more special.
             </Text>
-            <Text>
+            <Text style={styles.secondaryText}>
               Off track, the eVillage fan zone showcases all day entertainment,
               live music, interactive displays and a dedicated kids area. What’s
               more, we get our fans even closer to the action with special
@@ -109,8 +111,8 @@ const styles = StyleSheet.create({
   sectionHeading: {
     fontSize: 14,
     left: 16,
-    paddingTop: 16,
-    paddingBottom: 10,
+    paddingTop: 24,
+    paddingBottom: 12,
   },
 
   infoArea: {
@@ -129,14 +131,16 @@ const styles = StyleSheet.create({
   },
 
   RaceTitleText: {
-    fontSize: 20,
+    fontSize: 22,
     fontFamily: 'Roboto',
   },
 
   RaceVenueText: {
     fontSize: 14,
     marginTop: 6,
+    marginBottom: 4,
     fontFamily: 'Roboto',
+    fontStyle: 'italic',
   },
 
   photoBoxImage: {
@@ -157,10 +161,21 @@ const styles = StyleSheet.create({
   },
 
   herotitle: {
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: '400',
+    marginBottom: 2,
+    fontFamily: 'Roboto',
   },
 
   subtitle: {
     fontSize: 14,
+  },
+
+  secondaryText: {
+    lineHeight: 26,
+    fontSize: 16,
+    marginTop: 2,
+    marginBottom: 16,
+    fontFamily: 'Roboto',
   },
 });
