@@ -100,16 +100,18 @@ const styles = StyleSheet.create({
   },
 
   headerText: {
+    color: '#505050',
     fontSize: 16,
     fontWeight: '500',
     fontFamily: 'Roboto',
   },
 
   content: {
-    paddingBottom: 16,
+    // paddingBottom: 16,
     paddingLeft: 16,
     paddingRight: 20,
-    paddingTop: 16,
+    // paddingTop: 16,
+    backgroundColor: 'rgb(250, 250, 252)',
   },
 
   infoArea: {
@@ -121,6 +123,7 @@ const styles = StyleSheet.create({
   },
 
   logoText: {
+    color: '#485CDF',
     fontSize: 24,
     fontWeight: '700',
     fontFamily: 'Roboto',
@@ -128,9 +131,12 @@ const styles = StyleSheet.create({
 
   versionText: {
     fontSize: 12,
+    fontFamily: 'Roboto',
+    color: '#909090',
   },
 
   descriptionText: {
+    color: '#252525',
     fontSize: 16,
     marginTop: 7,
     marginBottom: 2,

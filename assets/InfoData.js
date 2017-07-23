@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 8,
     fontFamily: 'Roboto',
+    color: '#252525',
   },
 
   secondaryText: {
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
     marginTop: 2,
     marginBottom: 16,
     fontFamily: 'Roboto',
+    color: '#505050',
   },
 });
 
@@ -231,9 +233,9 @@ export const InfoData = [
       <View>
         <Text style={styles.secondaryText}>
           For any queries contact us at
-          <Text style={{ fontWeight: '500' }}> +18762 1231</Text> or send us an
+          <Text style={{ fontWeight: '500' }}> 98762 1231</Text> or send us an
           email at
-          <Text style={{ fontWeight: '500' }}> support@forumale.com</Text>
+          <Text style={{ fontWeight: '500' }}> support@formulae.com</Text>
         </Text>
       </View>
     ),
