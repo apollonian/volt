@@ -143,11 +143,16 @@ const styles = StyleSheet.create({
   },
 
   cardTitleText: {
+    color: '#485CDF',
     fontSize: 16,
     marginTop: 4,
     marginBottom: 8,
     fontWeight: '500',
     fontFamily: 'Roboto',
+  },
+
+  calloutTitleText: {
+    color: '#485CDF',
   },
 
   cardDescriptionText: {
