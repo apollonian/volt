@@ -44,10 +44,20 @@ export class EventDetails extends PureComponent {
           </View>
           <View style={styles.infoCard}>
             <View style={styles.infoCardChunk}>
-              <Icon name="schedule" size={24} color="#BDBDBD" />
+              <Icon
+                name="schedule"
+                size={24}
+                style={{ paddingTop: 6 }}
+                color="#BDBDBD"
+              />
               <View style={{ flexDirection: 'column' }}>
                 <View>
-                  <Text style={styles.infoCardChunkMainText}>
+                  <Text
+                    style={[
+                      styles.infoCardChunkMainText,
+                      { fontWeight: '500' },
+                    ]}
+                  >
                     {eventTime}
                   </Text>
                 </View>
@@ -59,10 +69,20 @@ export class EventDetails extends PureComponent {
               </View>
             </View>
             <View style={styles.infoCardChunk}>
-              <Icon name="place" size={24} color="#BDBDBD" />
+              <Icon
+                name="place"
+                size={24}
+                style={{ paddingTop: 6 }}
+                color="#BDBDBD"
+              />
               <View style={{ flexDirection: 'column' }}>
                 <View>
-                  <Text style={styles.infoCardChunkMainText}>
+                  <Text
+                    style={[
+                      styles.infoCardChunkMainText,
+                      { fontWeight: '500' },
+                    ]}
+                  >
                     {eventVenueMain}
                   </Text>
                 </View>
@@ -74,7 +94,12 @@ export class EventDetails extends PureComponent {
               </View>
             </View>
             <View style={styles.infoCardChunk}>
-              <Icon name="info-outline" size={24} color="#BDBDBD" />
+              <Icon
+                name="info-outline"
+                size={24}
+                style={{ paddingTop: 6 }}
+                color="#BDBDBD"
+              />
               <Text style={styles.infoCardChunkMainText}>
                 {eventDescription}
               </Text>
@@ -187,13 +212,22 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     flexDirection: 'row',
     paddingLeft: 28,
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: 'rgba(0, 0, 0, 0.04)',
   },
 
   eventNameHero: {
     color: '#FFFFFF',
     fontSize: 24,
     left: 16,
+    fontWeight: '700',
+    fontFamily: 'Roboto',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
   },
 
   infoCard: {
@@ -215,14 +249,17 @@ const styles = StyleSheet.create({
   infoCardChunkMainText: {
     color: '#343434',
     fontSize: 16,
+    lineHeight: 26,
     paddingRight: 32,
     paddingLeft: 16,
+    fontFamily: 'Roboto',
   },
 
   infoCardChunkSecondaryText: {
     color: '#727272',
-    fontSize: 13,
+    fontSize: 14,
     paddingRight: 32,
     paddingLeft: 16,
+    fontFamily: 'Roboto',
   },
 });

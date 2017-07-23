@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: '#2D3645',
     borderRadius: 2,
-    elevation: 2,
+    elevation: 4,
     height: 140,
     padding: 0,
     marginLeft: 28,
