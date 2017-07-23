@@ -103,12 +103,13 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 16,
     fontWeight: '500',
+    fontFamily: 'Roboto',
   },
 
   content: {
     paddingBottom: 16,
     paddingLeft: 16,
-    paddingRight: 24,
+    paddingRight: 20,
     paddingTop: 16,
   },
 
@@ -123,6 +124,7 @@ const styles = StyleSheet.create({
   logoText: {
     fontSize: 24,
     fontWeight: '700',
+    fontFamily: 'Roboto',
   },
 
   versionText: {
@@ -133,10 +135,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 7,
     marginBottom: 2,
+    fontFamily: 'Roboto',
   },
 
   secondarydescriptionText: {
     fontSize: 16,
     fontWeight: '500',
+    fontFamily: 'Roboto',
   },
 });
