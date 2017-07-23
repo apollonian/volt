@@ -76,10 +76,11 @@ export class Events extends Component {
                   {event.eventTitle}
                 </Text>
                 <Text style={styles.subtitle}>
-                  <Text style={styles.blockInfoTimeDuration}>
-                    {event.eventDuration}min
-                  </Text>
-                  &nbsp;&bull;&nbsp;{event.eventVenueMain}
+                  {/* <Text style={styles.blockInfoTimeDuration}> */}
+                  {/* {event.eventDuration}min */}
+                  {/* </Text> */}
+                  {/* &nbsp;&bull;&nbsp; */}
+                  {event.eventVenueMain}
                 </Text>
               </View>
             </View>
@@ -205,10 +206,10 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
 
-  blockInfoTimeDuration: {
-    color: '#757575',
-    fontSize: 14,
-  },
+  // blockInfoTimeDuration: {
+  //   color: '#757575',
+  //   fontSize: 14,
+  // },
 
   blockInfoEvent: {
     flexGrow: 1,
