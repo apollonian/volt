@@ -50,7 +50,7 @@ export class Home extends Component {
           </Text>
           {ScheduleList}
           <Text style={styles.sectionHeading}>MY FAVORITES</Text>
-          <View style={[styles.card, { alignItems: 'center', paddingTop: 24 }]}>
+          <View style={[styles.card, { alignItems: 'center', paddingTop: 32 }]}>
             <Icon size={24} name="star" color="#727272" />
             <Text style={styles.secondaryText}>
               Starred activities will appear here!
