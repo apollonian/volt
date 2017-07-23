@@ -14,6 +14,7 @@ import { EventData } from '../assets/Data';
 let filterTags = [];
 
 export class Events extends Component {
+  // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Events',
     tabBarIcon: () => <Icon size={24} name="event" color="#727272" />,
@@ -155,8 +156,8 @@ const styles = StyleSheet.create({
 
   screenHeading: {
     color: '#343434',
-    fontFamily: 'Roboto',
     fontSize: 18,
+    fontFamily: 'Roboto',
   },
 
   scrollArea: {
@@ -222,15 +223,15 @@ const styles = StyleSheet.create({
   herotitle: {
     color: '#000',
     flexWrap: 'wrap',
-    fontFamily: 'Roboto',
     fontSize: 18,
     opacity: 0.7,
+    fontFamily: 'Roboto',
   },
 
   subtitle: {
     color: '#000',
-    fontFamily: 'Roboto',
     fontSize: 13,
     opacity: 0.5,
+    fontFamily: 'Roboto',
   },
 });

@@ -11,6 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 export class EventDetails extends PureComponent {
+  // react-navigation specific options
   static navigationOptions = {
     gesturesEnabled: true,
   };

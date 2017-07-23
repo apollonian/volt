@@ -4,11 +4,17 @@ import { Text, View, StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   mainText: {
     fontSize: 16,
+    lineHeight: 26,
+    fontWeight: '500',
+    marginTop: 16,
+    marginBottom: 8,
   },
 
   secondaryText: {
-    fontSize: 14,
-    margin: 8,
+    lineHeight: 26,
+    fontSize: 16,
+    marginTop: 2,
+    marginBottom: 16,
   },
 });
 
@@ -18,7 +24,7 @@ export const InfoData = [
     content: (
       <View>
         <Text style={styles.mainText}>
-          1. Can we bring food or drinks in the site?
+          1. Can we bring food/drinks in the site?
         </Text>
         <Text style={styles.secondaryText}>
           Bringing your own consumption is not permitted on the Hydro-Québec
@@ -190,12 +196,42 @@ export const InfoData = [
           sections at the front of the grandstands are available to purchase
           here on Ticketmaster. There is a ground-level track-crossing next to
           the ADA platform in the Allianz eVillage to the grandstands at the
-          following times: Saturday*: 9:15am-9:25am 1:10pm-1:20pm 3:35pm-3:50pm
-          5:20pm-5:30pm Sunday*: 10:10am-10:20am 12:35pm-12:50pm 2:20pm-2:30pm
+          following times:
         </Text>
+        <Text style={[styles.secondaryText, { fontWeight: '500' }]}>
+          SATURDAY:
+        </Text>
+        <Text style={{ fontSize: 16, padding: 2 }}>09:15am - 09:25am</Text>
+        <Text style={{ fontSize: 16, padding: 2 }}>01:10pm - 01:20pm</Text>
+        <Text style={{ fontSize: 16, padding: 2 }}>03:35pm - 03:50pm</Text>
+        <Text style={{ fontSize: 16, padding: 2, marginBottom: 8 }}>
+          05:20pm - 05:30pm
+        </Text>
+        <Text style={[styles.secondaryText, { fontWeight: '500' }]}>
+          SUNDAY:
+        </Text>
+        <Text style={{ fontSize: 16, padding: 2 }}>10:10am - 10:20am</Text>
+        <Text style={{ fontSize: 16, padding: 2 }}>12:35pm - 12:50pm</Text>
+        <Text style={{ fontSize: 16, padding: 2, marginBottom: 8 }}>
+          02:20pm - 02:30pm
+        </Text>
+        <Text style={styles.secondaryText}>*Timings subject to change.</Text>
         <Text style={styles.secondaryText}>
-          *Timings subject to change. There are two ADA restrooms available at
-          each restroom bank throughout the venue.
+          There are two ADA restrooms available at each restroom bank throughout
+          the venue.
+        </Text>
+      </View>
+    ),
+  },
+  {
+    title: <Text style={styles.headingText}>CONTACT</Text>,
+    content: (
+      <View>
+        <Text style={styles.secondaryText}>
+          For any queries contact us at
+          <Text style={{ fontWeight: '500' }}> +18762 1231</Text> or send us an
+          email at
+          <Text style={{ fontWeight: '500' }}> support@forumale.com</Text>
         </Text>
       </View>
     ),

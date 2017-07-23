@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import Accordion from 'react-native-collapsible/Accordion';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import { InfoData } from '../assets/InfoData';
 
 export class Info extends Component {
+  // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Info',
     tabBarIcon: () => <Icon size={24} name="info" color="#727272" />,
   };
 
+  // Renders the collapsible's / accordion's header
   renderHeader = (section, index, isActive) => {
     return (
       <View style={styles.header}>
@@ -23,6 +25,7 @@ export class Info extends Component {
     );
   };
 
+  // Renders the collapsible's /accordion's content
   renderContent = section => {
     return (
       <View style={styles.content}>
@@ -38,6 +41,15 @@ export class Info extends Component {
           <Text style={styles.screenHeading}>Info</Text>
         </View>
         <ScrollView>
+          <View style={styles.infoArea}>
+            <Text style={styles.logoText}>RACEDAY</Text>
+            <Text style={styles.versionText}>0.1.0b</Text>
+            <Text style={{ marginTop: 7 }}>__</Text>
+            <Text style={styles.descriptionText}>
+              Developed by <Text style={{ fontWeight: '700' }}>Team Volt</Text>
+            </Text>
+            <Text style={styles.secondarydescriptionText}>#UNITEDBYHCL</Text>
+          </View>
           <Accordion
             sections={InfoData}
             renderHeader={this.renderHeader}
@@ -94,6 +106,37 @@ const styles = StyleSheet.create({
   },
 
   content: {
-    padding: 16,
+    paddingBottom: 16,
+    paddingLeft: 16,
+    paddingRight: 24,
+    paddingTop: 16,
+  },
+
+  infoArea: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    paddingTop: 48,
+    paddingBottom: 40,
+  },
+
+  logoText: {
+    fontSize: 24,
+    fontWeight: '700',
+  },
+
+  versionText: {
+    fontSize: 12,
+  },
+
+  descriptionText: {
+    fontSize: 16,
+    marginTop: 7,
+    marginBottom: 2,
+  },
+
+  secondarydescriptionText: {
+    fontSize: 16,
+    fontWeight: '500',
   },
 });

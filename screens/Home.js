@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { ScheduleData } from '../assets/Data';
 
 export class Home extends Component {
+  // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Home',
     tabBarIcon: () => <Icon size={24} name="home" color="#727272" />,

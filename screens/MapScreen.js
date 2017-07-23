@@ -12,6 +12,7 @@ const LATITUDE_DELTA = 0.0052;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 
 export class MapScreen extends Component {
+  // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Map',
     tabBarIcon: () => <Icon size={24} name="map" color="#727272" />,
