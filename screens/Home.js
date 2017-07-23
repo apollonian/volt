@@ -30,22 +30,24 @@ export class Home extends Component {
           <Text style={styles.screenHeading}>Home</Text>
         </View>
         <ScrollView>
-          <View style={styles.hero}>
-            <Text style={styles.RaceTitleText}>
-              Julius Baer Mexico City ePrix
+          <View style={styles.infoArea}>
+            <Text>JULIUS BAER</Text>
+            <Text style={[styles.RaceTitleText, { fontWeight: '700' }]}>
+              Mexico City ePrix
             </Text>
             <Text style={styles.RaceVenueText}>
-              Autòdromo Hermanos Rodrìuez
+              Autodromo Hermanos Rodríguez
             </Text>
-            <Text style={styles.RaceDateText}>1 April, 2017</Text>
           </View>
           <View>
             <Image
-              source={require('../assets/images/hero-1.jpg')}
+              source={require('../assets/images/hero-2.jpg')}
               style={styles.photoBoxImage}
             />
           </View>
-          <Text style={styles.sectionHeading}>SCHEDULE</Text>
+          <Text style={[styles.sectionHeading, { marginTop: 60 }]}>
+            SCHEDULE &bull; Apr 1
+          </Text>
           {ScheduleList}
           <Text style={styles.sectionHeading}>MY FAVORITES</Text>
           <View style={[styles.card, { alignItems: 'center' }]}>
@@ -111,27 +113,36 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
 
-  hero: {
-    alignItems: 'center',
+  infoArea: {
+    position: 'absolute',
+    elevation: 1,
+    // alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
+    paddingTop: 16,
+    paddingBottom: 12,
+    paddingLeft: 16,
+    marginLeft: 40,
+    backgroundColor: 'rgba(255, 255, 255, 1)',
+    borderRadius: 2,
+    top: 245,
   },
 
   RaceTitleText: {
-    fontSize: 24,
-  },
-
-  RaceDateText: {
-    fontSize: 14,
+    fontSize: 20,
+    fontFamily: 'Roboto',
   },
 
   RaceVenueText: {
     fontSize: 14,
+    marginTop: 6,
+    fontFamily: 'Roboto',
   },
 
   photoBoxImage: {
     resizeMode: 'cover',
     width: '100%',
-    height: 180,
+    height: 300,
   },
 
   card: {
