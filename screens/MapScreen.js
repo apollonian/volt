@@ -128,7 +128,10 @@ const styles = StyleSheet.create({
 
   calloutCard: {
     backgroundColor: '#FFFFFF',
-    padding: 16,
+    paddingTop: 20,
+    paddingRight: 16,
+    paddingBottom: 22,
+    paddingLeft: 16,
     marginLeft: 24,
     marginRight: 24,
     marginBottom: 60,
