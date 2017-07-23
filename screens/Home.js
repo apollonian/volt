@@ -7,7 +7,7 @@ export class Home extends Component {
   // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Home',
-    tabBarIcon: () => <Icon size={24} name="home" color="#727272" />,
+    tabBarIcon: () => <Icon size={24} name="home" color="#252525" />,
   };
 
   render() {
@@ -27,7 +27,7 @@ export class Home extends Component {
     return (
       <View style={styles.screen}>
         <View style={styles.screenTab}>
-          <Text style={styles.screenHeading}>Home</Text>
+          <Text style={styles.screenHeading}>HOME</Text>
         </View>
         <ScrollView>
           <View style={styles.infoArea}>
@@ -51,13 +51,13 @@ export class Home extends Component {
           {ScheduleList}
           <Text style={styles.sectionHeading}>MY FAVORITES</Text>
           <View style={[styles.card, { alignItems: 'center', paddingTop: 32 }]}>
-            <Icon size={24} name="star" color="#727272" />
+            <Icon size={24} name="star" color="#252525" />
             <Text style={styles.secondaryText}>
               Starred activities will appear here!
             </Text>
           </View>
           <Text style={styles.sectionHeading}>ABOUT</Text>
-          <View style={[styles.card, { marginBottom: 24 }]}>
+          <View style={[styles.card, { marginBottom: 0 }]}>
             <Text style={styles.secondaryText}>
               Formula E will charge its way through one of the most vibrant
               cities to race at the 2017 FIA Formula E Julius Baer Mexico City
@@ -93,23 +93,24 @@ const styles = StyleSheet.create({
   },
   screenTab: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    elevation: 0,
+    backgroundColor: '#75F3BE',
+    elevation: 2,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#EEEEEE',
   },
 
   screenHeading: {
-    color: '#343434',
+    color: '#252525',
     fontFamily: 'Roboto',
-    fontSize: 18,
+    fontSize: 14,
+    fontWeight: '500',
   },
 
   sectionHeading: {
     fontSize: 14,
+    fontFamily: 'Roboto',
+    color: '#757575',
     left: 16,
     paddingTop: 24,
     paddingBottom: 12,
@@ -131,16 +132,18 @@ const styles = StyleSheet.create({
   },
 
   RaceTitleText: {
-    fontSize: 22,
+    fontSize: 24,
     fontFamily: 'Roboto',
+    color: '#252525',
   },
 
   RaceVenueText: {
+    color: '#505050',
     fontSize: 14,
     marginTop: 6,
     marginBottom: 4,
     fontFamily: 'Roboto',
-    fontStyle: 'italic',
+    fontStyle: 'normal',
   },
 
   photoBoxImage: {
@@ -160,10 +163,16 @@ const styles = StyleSheet.create({
     borderBottomColor: '#F7F7F7',
   },
 
+  blockInfoTimeDuration: {
+    color: '#757575',
+    fontFamily: 'Roboto',
+  },
+
   herotitle: {
-    fontSize: 18,
-    fontWeight: '400',
+    fontSize: 20,
+    fontStyle: 'italic',
     marginBottom: 2,
+    color: '#252525',
     fontFamily: 'Roboto',
   },
 
@@ -177,5 +186,6 @@ const styles = StyleSheet.create({
     marginTop: 1,
     marginBottom: 16,
     fontFamily: 'Roboto',
+    color: '#505050',
   },
 });

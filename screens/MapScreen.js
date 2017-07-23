@@ -15,7 +15,7 @@ export class MapScreen extends Component {
   // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Map',
-    tabBarIcon: () => <Icon size={24} name="map" color="#727272" />,
+    tabBarIcon: () => <Icon size={24} name="map" color="#252525" />,
   };
 
   constructor(props) {
@@ -86,7 +86,7 @@ export class MapScreen extends Component {
     return (
       <View style={{ paddingTop: this.state.bugfix, flex: 1 }}>
         <View style={styles.screenTab}>
-          <Text style={styles.screenHeading}>Map</Text>
+          <Text style={styles.screenHeading}>MAP</Text>
         </View>
         <MapView
           style={{ flex: 1 }}
@@ -111,19 +111,18 @@ export class MapScreen extends Component {
 const styles = StyleSheet.create({
   screenTab: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    elevation: 0,
+    backgroundColor: '#75F3BE',
+    elevation: 2,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#EEEEEE',
   },
 
   screenHeading: {
-    color: '#343434',
+    color: '#252525',
     fontFamily: 'Roboto',
-    fontSize: 18,
+    fontSize: 14,
+    fontWeight: '500',
   },
 
   calloutCard: {

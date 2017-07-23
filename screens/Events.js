@@ -17,7 +17,7 @@ export class Events extends Component {
   // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Events',
-    tabBarIcon: () => <Icon size={24} name="event" color="#727272" />,
+    tabBarIcon: () => <Icon size={24} name="event" color="#252525" />,
   };
 
   constructor(props) {
@@ -101,17 +101,17 @@ export class Events extends Component {
               )}
             >
               <View style={[styles.iconBase, styles.leftIconBound]}>
-                <Icon size={22} name="view-list" color="#727272" />
+                <Icon size={22} name="view-list" color="#252525" />
               </View>
             </TouchableNativeFeedback>
           </View>
-          <Text style={styles.screenHeading}>Events</Text>
+          <Text style={styles.screenHeading}>EVENTS</Text>
           <PopupMenu
             actions={this.fillFilterTags()}
             onPress={this.onPopupEvent}
             icon={'filter-list'}
             size={22}
-            color={'#727272'}
+            color={'#252525'}
           />
         </View>
         <View style={styles.scrollArea}>
@@ -135,13 +135,18 @@ const styles = StyleSheet.create({
 
   screenTab: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    elevation: 0,
+    backgroundColor: '#75F3BE',
+    elevation: 2,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'space-between',
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#EEEEEE',
+  },
+
+  screenHeading: {
+    color: '#252525',
+    fontFamily: 'Roboto',
+    fontSize: 14,
+    fontWeight: '500',
   },
 
   iconBase: {
@@ -152,12 +157,6 @@ const styles = StyleSheet.create({
 
   leftIconBound: {
     left: 0,
-  },
-
-  screenHeading: {
-    color: '#343434',
-    fontSize: 18,
-    fontFamily: 'Roboto',
   },
 
   scrollArea: {
@@ -172,7 +171,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: '#2D3645',
     borderRadius: 2,
-    elevation: 4,
+    elevation: 2,
     height: 140,
     padding: 0,
     marginLeft: 28,

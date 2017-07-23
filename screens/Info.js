@@ -8,7 +8,7 @@ export class Info extends Component {
   // react-navigation specific options
   static navigationOptions = {
     tabBarLabel: 'Info',
-    tabBarIcon: () => <Icon size={24} name="info" color="#727272" />,
+    tabBarIcon: () => <Icon size={24} name="info" color="#252525" />,
   };
 
   // Renders the collapsible's / accordion's header
@@ -38,7 +38,7 @@ export class Info extends Component {
     return (
       <View style={styles.screen}>
         <View style={styles.screenTab}>
-          <Text style={styles.screenHeading}>Info</Text>
+          <Text style={styles.screenHeading}>INFO</Text>
         </View>
         <ScrollView>
           <View style={styles.infoArea}>
@@ -73,19 +73,18 @@ const styles = StyleSheet.create({
 
   screenTab: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    elevation: 0,
+    backgroundColor: '#75F3BE',
+    elevation: 2,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#EEEEEE',
   },
 
   screenHeading: {
-    color: '#343434',
+    color: '#252525',
     fontFamily: 'Roboto',
-    fontSize: 18,
+    fontSize: 14,
+    fontWeight: '500',
   },
 
   header: {

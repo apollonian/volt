@@ -32,10 +32,10 @@ export const Tabs = TabNavigator(
     animationEnabled: true,
     tabBarOptions: {
       bottomNavigationOptions: {
-        labelColor: '#343434',
+        labelColor: '#485CDF',
         rippleColor: '#BDBDBD',
         backgroundColor: '#FFFFFF',
-        shifting: false,
+        shifting: true,
         style: {
           height: 56,
           borderTopWidth: 0.5,
@@ -43,16 +43,16 @@ export const Tabs = TabNavigator(
         },
         tabs: {
           Home: {
-            activeIcon: <Icon size={24} name="home" color="#343434" />,
+            activeIcon: <Icon size={24} name="home" color="#485CDF" />,
           },
           Events: {
-            activeIcon: <Icon size={24} name="event" color="#343434" />,
+            activeIcon: <Icon size={24} name="event" color="#485CDF" />,
           },
           MapScreen: {
-            activeIcon: <Icon size={24} name="map" color="#343434" />,
+            activeIcon: <Icon size={24} name="map" color="#485CDF" />,
           },
           Info: {
-            activeIcon: <Icon size={24} name="info" color="#343434" />,
+            activeIcon: <Icon size={24} name="info" color="#485CDF" />,
           },
         },
       },
