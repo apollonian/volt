@@ -24,8 +24,21 @@ export class Events extends Component {
     super(props);
     this.state = {
       filter: 'All',
+      listView: false,
     };
   }
+
+  renderImageBlock = eventImage => {
+    if (!this.state.listView)
+      return (
+        <View style={styles.imageContainer}>
+          <Image
+            source={eventImage}
+            style={{ flex: 1, width: null, height: null, borderRadius: 2 }}
+          />
+        </View>
+      );
+  };
 
   fillFilterTags = () => {
     filterTags = [];
@@ -44,6 +57,7 @@ export class Events extends Component {
   };
 
   render() {
+    let paddingTopUnit = this.state.listView ? 0 : 130;
     let EventList = EventData.filter(
       event =>
         'All' === this.state.filter
@@ -51,12 +65,7 @@ export class Events extends Component {
           : event.eventTag === this.state.filter ? true : false
     ).map(event =>
       <View style={styles.card} key={event.eventID}>
-        <View style={styles.imageContainer}>
-          <Image
-            source={event.eventImage}
-            style={{ flex: 1, width: null, height: null, borderRadius: 2 }}
-          />
-        </View>
+        {this.renderImageBlock(event.eventImage)}
         <TouchableNativeFeedback
           onPress={() => this.props.navigation.navigate('EventDetails', event)}
           background={TouchableNativeFeedback.Ripple(
@@ -64,7 +73,12 @@ export class Events extends Component {
             false
           )}
         >
-          <View style={styles.block}>
+          <View
+            style={[
+              styles.block,
+              { paddingTop: paddingTopUnit, marginTop: -paddingTopUnit },
+            ]}
+          >
             <View style={styles.blockInfo}>
               <View style={styles.blockInfoTime}>
                 <Text style={styles.blockInfoTimeChunk}>
@@ -76,10 +90,6 @@ export class Events extends Component {
                   {event.eventTitle}
                 </Text>
                 <Text style={styles.subtitle}>
-                  {/* <Text style={styles.blockInfoTimeDuration}> */}
-                  {/* {event.eventDuration}min */}
-                  {/* </Text> */}
-                  {/* &nbsp;&bull;&nbsp; */}
                   {event.eventVenueMain}
                 </Text>
               </View>
@@ -95,7 +105,7 @@ export class Events extends Component {
         <View style={styles.screenTab}>
           <View>
             <TouchableNativeFeedback
-              onPress={() => console.log('TODO')}
+              onPress={() => this.setState({ listView: !this.state.listView })}
               background={TouchableNativeFeedback.Ripple(
                 'rgba(0, 0, 0, 0.08)',
                 true
@@ -183,10 +193,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderRadius: 2,
     elevation: 0,
-    marginTop: -130,
     marginRight: 20,
     marginLeft: 36,
-    paddingTop: 130,
   },
 
   blockInfo: {
