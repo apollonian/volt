@@ -10,10 +10,6 @@ export const fonts = {
   'worksans-semibold': require('../assets/fonts/WorkSans-Medium.ttf'),
   'worksans-bold': require('../assets/fonts/WorkSans-Bold.ttf'),
   'worksans-light': require('../assets/fonts/WorkSans-Light.ttf'),
-  'LibreFranklin-regular': require('../assets/fonts/LibreFranklin-Regular.ttf'),
-  'LibreFranklin-medium': require('../assets/fonts/LibreFranklin-Medium.ttf'),
-  'OpenSans-regular': require('../assets/fonts/OpenSans-Regular.ttf'),
-  'OpenSans-semibold': require('../assets/fonts/OpenSans-SemiBold.ttf'),
 };
 
 export default (styles = {
