@@ -15,7 +15,7 @@ export class Info extends Component {
   renderHeader = (section, index, isActive) => {
     return (
       <View style={styles.header}>
-        <Text style={styles.headerText}>
+        <Text style={styles.sectionText}>
           {section.title}
         </Text>
         {isActive
@@ -42,12 +42,11 @@ export class Info extends Component {
         </View>
         <ScrollView>
           <View style={styles.infoArea}>
+            <Text style={styles.versionText}>0.1.1b</Text>
+
             <Text style={styles.logoText}>RACEDAY</Text>
-            <Text style={styles.versionText}>0.1.0b</Text>
-            <Text style={{ marginTop: 7 }}>__</Text>
-            <Text style={styles.descriptionText}>
-              Developed by <Text style={{ fontWeight: '700' }}>Team Volt</Text>
-            </Text>
+            <Text style={{ marginTop: 7, color: '#959595' }}>__</Text>
+            <Text style={styles.descriptionText}>Team Volt</Text>
             <Text style={styles.secondarydescriptionText}>#UNITEDBYHCL</Text>
           </View>
           <Accordion
@@ -74,17 +73,17 @@ const styles = StyleSheet.create({
   screenTab: {
     alignItems: 'center',
     backgroundColor: '#75F3BE',
-    elevation: 2,
+    elevation: 1,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
   },
 
   screenHeading: {
+    marginTop: 2,
     color: '#252525',
-    fontFamily: 'Roboto',
-    fontSize: 14,
-    fontWeight: '500',
+    fontFamily: 'worksans-semibold',
+    fontSize: 15,
   },
 
   header: {
@@ -92,26 +91,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     borderBottomColor: '#F7F7F7',
     flexDirection: 'row',
+    padding: 20,
     justifyContent: 'space-between',
-    paddingTop: 16,
-    paddingRight: 16,
-    paddingBottom: 16,
-    paddingLeft: 16,
-  },
-
-  headerText: {
-    color: '#505050',
-    fontSize: 16,
-    fontWeight: '500',
-    fontFamily: 'Roboto',
-  },
-
-  content: {
-    // paddingBottom: 16,
-    paddingLeft: 16,
-    paddingRight: 20,
-    // paddingTop: 16,
-    backgroundColor: 'rgb(250, 250, 252)',
   },
 
   infoArea: {
@@ -119,33 +100,42 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     paddingTop: 48,
-    paddingBottom: 40,
+    paddingBottom: 48,
   },
 
   logoText: {
-    color: '#485CDF',
+    color: '#252525',
     fontSize: 24,
-    fontWeight: '700',
-    fontFamily: 'Roboto',
+    fontFamily: 'worksans-bold',
+  },
+
+  content: {
+    paddingLeft: 20,
+    paddingRight: 20,
+    backgroundColor: 'rgb(248, 248, 250)',
   },
 
   versionText: {
     fontSize: 12,
-    fontFamily: 'Roboto',
+    fontFamily: 'chivo-regular',
     color: '#909090',
   },
 
   descriptionText: {
-    color: '#252525',
+    color: '#505050',
     fontSize: 16,
-    marginTop: 7,
-    marginBottom: 2,
-    fontFamily: 'Roboto',
+    marginTop: 8,
+    marginBottom: 4,
+    fontFamily: 'rubik-semibold',
   },
 
   secondarydescriptionText: {
     fontSize: 16,
-    fontWeight: '500',
-    fontFamily: 'Roboto',
+    fontFamily: 'rubik-light',
+  },
+
+  sectionText: {
+    fontFamily: 'worksans-regular',
+    fontSize: 14,
   },
 });

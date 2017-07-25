@@ -31,10 +31,8 @@ export class Home extends Component {
         </View>
         <ScrollView>
           <View style={styles.infoArea}>
-            <Text>JULIUS BAER</Text>
-            <Text style={[styles.RaceTitleText, { fontWeight: '700' }]}>
-              Mexico City ePrix
-            </Text>
+            <Text style={styles.RaceTitleSponsorText}>JULIUS BAER</Text>
+            <Text style={styles.RaceTitleText}>Mexico City ePrix</Text>
             <Text style={styles.RaceVenueText}>
               Autòdromo Hermanos Rodríguez
             </Text>
@@ -46,13 +44,23 @@ export class Home extends Component {
             />
           </View>
           <Text style={[styles.sectionHeading, { marginTop: 60 }]}>
-            SCHEDULE &bull; Apr 1
+            SCHEDULE &bull; APR 1
           </Text>
           {ScheduleList}
           <Text style={styles.sectionHeading}>MY FAVORITES</Text>
           <View style={[styles.card, { alignItems: 'center', paddingTop: 32 }]}>
-            <Icon size={24} name="star" color="#252525" />
-            <Text style={styles.secondaryText}>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignItems: 'center',
+                padding: 4,
+              }}
+            >
+              <Icon size={22} name="star" color="#959595" />
+              <Icon size={36} name="star" color="#505050" />
+              <Icon size={22} name="star" color="#959595" />
+            </View>
+            <Text style={[styles.secondaryText, { color: '#505050' }]}>
               Starred activities will appear here!
             </Text>
           </View>
@@ -94,56 +102,59 @@ const styles = StyleSheet.create({
   screenTab: {
     alignItems: 'center',
     backgroundColor: '#75F3BE',
-    elevation: 2,
+    elevation: 1,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
   },
 
   screenHeading: {
+    marginTop: 2,
     color: '#252525',
-    fontFamily: 'Roboto',
-    fontSize: 14,
-    fontWeight: '500',
+    fontFamily: 'worksans-semibold',
+    fontSize: 15,
   },
 
   sectionHeading: {
     fontSize: 14,
-    fontFamily: 'Roboto',
+    fontFamily: 'worksans-regular',
     color: '#757575',
-    left: 16,
+    left: 20,
     paddingTop: 24,
     paddingBottom: 12,
   },
 
   infoArea: {
-    position: 'absolute',
-    elevation: 1,
-    // alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    paddingTop: 16,
-    paddingBottom: 12,
-    paddingLeft: 16,
-    marginLeft: 40,
-    backgroundColor: 'rgba(255, 255, 255, 1)',
+    backgroundColor: '#FFFFFF',
     borderRadius: 2,
-    top: 225,
+    elevation: 1,
+    justifyContent: 'center',
+    position: 'absolute',
+    paddingTop: 20,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    marginLeft: 40,
+    top: 220,
+    width: '100%',
   },
 
   RaceTitleText: {
-    fontSize: 24,
-    fontFamily: 'Roboto',
+    fontSize: 28,
+    fontFamily: 'chivo-regular',
+    marginBottom: 4,
     color: '#252525',
   },
 
+  RaceTitleSponsorText: {
+    fontSize: 12,
+    fontFamily: 'worksans-regular',
+  },
+
   RaceVenueText: {
-    color: '#505050',
-    fontSize: 14,
-    marginTop: 6,
-    marginBottom: 4,
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
+    color: '#757575',
+    fontSize: 16,
+    marginTop: 2,
+    fontFamily: 'chivo-regular',
   },
 
   photoBoxImage: {
@@ -153,10 +164,9 @@ const styles = StyleSheet.create({
   },
 
   card: {
-    paddingTop: 16,
-    paddingBottom: 16,
-    paddingLeft: 16,
-    paddingRight: 16,
+    paddingLeft: 20,
+    paddingTop: 18,
+    paddingBottom: 18,
     justifyContent: 'center',
     backgroundColor: '#FFFFFF',
     borderBottomWidth: 1,
@@ -165,15 +175,14 @@ const styles = StyleSheet.create({
 
   blockInfoTimeDuration: {
     color: '#757575',
-    fontFamily: 'Roboto',
+    fontFamily: 'chivo-regular',
   },
 
   herotitle: {
     fontSize: 20,
-    fontStyle: 'italic',
-    marginBottom: 2,
+    marginBottom: 4,
     color: '#252525',
-    fontFamily: 'Roboto',
+    fontFamily: 'rubik-italic',
   },
 
   subtitle: {
@@ -183,9 +192,9 @@ const styles = StyleSheet.create({
   secondaryText: {
     lineHeight: 26,
     fontSize: 16,
-    marginTop: 1,
-    marginBottom: 16,
-    fontFamily: 'Roboto',
-    color: '#505050',
+    marginBottom: 18,
+    paddingRight: 12,
+    fontFamily: 'rubik-regular',
+    color: '#252525',
   },
 });

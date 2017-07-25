@@ -41,8 +41,7 @@ export class Events extends Component {
   };
 
   fillFilterTags = () => {
-    filterTags = [];
-    filterTags.push('All');
+    filterTags = ['All'];
     EventData.forEach(item => {
       filterTags.push(item.eventTag);
     });
@@ -70,7 +69,7 @@ export class Events extends Component {
           onPress={() => this.props.navigation.navigate('EventDetails', event)}
           background={TouchableNativeFeedback.Ripple(
             'rgba(0, 0, 0, 0.08)',
-            false
+            true
           )}
         >
           <View
@@ -112,7 +111,9 @@ export class Events extends Component {
               )}
             >
               <View style={[styles.iconBase, styles.leftIconBound]}>
-                <Icon size={22} name="view-list" color="#252525" />
+                {!this.state.listView
+                  ? <Icon size={24} name="view-list" color="#252525" />
+                  : <Icon size={22} name="view-day" color="#252525" />}
               </View>
             </TouchableNativeFeedback>
           </View>
@@ -121,7 +122,7 @@ export class Events extends Component {
             actions={this.fillFilterTags()}
             onPress={this.onPopupEvent}
             icon={'filter-list'}
-            size={22}
+            size={24}
             color={'#252525'}
           />
         </View>
@@ -154,16 +155,17 @@ const styles = StyleSheet.create({
   },
 
   screenHeading: {
+    marginTop: 2,
     color: '#252525',
-    fontFamily: 'Roboto',
-    fontSize: 14,
-    fontWeight: '500',
+    fontFamily: 'worksans-semibold',
+    fontSize: 15,
   },
 
   iconBase: {
     alignItems: 'center',
     justifyContent: 'center',
     width: 56,
+    height: 56,
   },
 
   leftIconBound: {
@@ -182,7 +184,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     backgroundColor: '#2D3645',
     borderRadius: 2,
-    elevation: 2,
+    elevation: 1,
     height: 140,
     padding: 0,
     marginLeft: 28,
@@ -211,13 +213,8 @@ const styles = StyleSheet.create({
 
   blockInfoTimeChunk: {
     color: '#505050',
-    fontWeight: '500',
+    fontFamily: 'chivo-regular',
   },
-
-  // blockInfoTimeDuration: {
-  //   color: '#757575',
-  //   fontSize: 14,
-  // },
 
   blockInfoEvent: {
     flexGrow: 1,
@@ -233,13 +230,13 @@ const styles = StyleSheet.create({
     color: '#252525',
     flexWrap: 'wrap',
     fontSize: 18,
-    fontFamily: 'Roboto',
+    fontFamily: 'rubik-regular',
     marginBottom: 2,
   },
 
   subtitle: {
-    color: '#505050',
+    color: '#757575',
+    fontFamily: 'rubik-regular',
     fontSize: 14,
-    fontFamily: 'Roboto',
   },
 });

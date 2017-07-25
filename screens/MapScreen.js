@@ -92,6 +92,7 @@ export class MapScreen extends Component {
           style={{ flex: 1 }}
           initialRegion={region}
           pitchEnabled={false}
+          toolbarEnabled={false}
           moveOnMarkerPress
           showsUserLocation
           showCompass
@@ -112,17 +113,17 @@ const styles = StyleSheet.create({
   screenTab: {
     alignItems: 'center',
     backgroundColor: '#75F3BE',
-    elevation: 2,
+    elevation: 1,
     flexDirection: 'row',
     height: 56,
     justifyContent: 'center',
   },
 
   screenHeading: {
+    marginTop: 2,
     color: '#252525',
-    fontSize: 14,
-    fontWeight: '500',
-    fontFamily: 'Roboto',
+    fontFamily: 'worksans-semibold',
+    fontSize: 15,
   },
 
   calloutCard: {
@@ -147,18 +148,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 4,
     marginBottom: 8,
-    fontWeight: '500',
-    fontFamily: 'Roboto',
+    fontFamily: 'worksans-bold',
   },
 
   calloutTitleText: {
-    color: '#485CDF',
+    color: '#505050',
+    fontFamily: 'rubik-regular',
   },
 
   cardDescriptionText: {
     fontSize: 16,
     lineHeight: 26,
-    fontFamily: 'Roboto',
+    fontFamily: 'rubik-regular',
   },
 });
 

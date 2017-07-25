@@ -5,19 +5,16 @@ const styles = StyleSheet.create({
   mainText: {
     fontSize: 16,
     lineHeight: 26,
-    fontWeight: '500',
-    marginTop: 16,
-    marginBottom: 8,
-    fontFamily: 'Roboto',
+    marginTop: 20,
+    fontFamily: 'rubik-semibold',
     color: '#252525',
   },
 
   secondaryText: {
     lineHeight: 26,
     fontSize: 16,
-    marginTop: 2,
-    marginBottom: 16,
-    fontFamily: 'Roboto',
+    marginTop: 14,
+    fontFamily: 'rubik-regular',
     color: '#505050',
   },
 });
@@ -106,7 +103,7 @@ export const InfoData = [
           11. Why do drivers change cars during the race? Why not simply change
           the battery?
         </Text>
-        <Text style={styles.secondaryText}>
+        <Text style={[styles.secondaryText, { marginBottom: 24 }]}>
           Drivers have to change cars during the race because today’s electric
           technology doesn’t allow a car to go full speed for an hour. One of
           the purposes of Formula E is, in fact, to accelerate the development
@@ -172,7 +169,7 @@ export const InfoData = [
           this station is the only attended Citibike station.
         </Text>
         <Text style={styles.mainText}>PUBLIC BUS</Text>
-        <Text style={styles.secondaryText}>
+        <Text style={[styles.secondaryText, { marginBottom: 24 }]}>
           The B61 public bus route takes you through Red Hook to downtown
           Brooklyn or to Park Slope.
         </Text>
@@ -220,7 +217,7 @@ export const InfoData = [
           02:20pm - 02:30pm
         </Text>
         <Text style={styles.secondaryText}>*Timings subject to change.</Text>
-        <Text style={styles.secondaryText}>
+        <Text style={[styles.secondaryText, { marginBottom: 24 }]}>
           There are two ADA restrooms available at each restroom bank throughout
           the venue.
         </Text>
@@ -231,7 +228,7 @@ export const InfoData = [
     title: <Text style={styles.headingText}>CONTACT</Text>,
     content: (
       <View>
-        <Text style={styles.secondaryText}>
+        <Text style={[styles.secondaryText, { marginBottom: 24 }]}>
           For any queries contact us at
           <Text style={{ fontWeight: '500' }}> 98762 1231</Text> or send us an
           email at

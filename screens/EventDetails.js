@@ -55,7 +55,7 @@ export class EventDetails extends PureComponent {
                   <Text
                     style={[
                       styles.infoCardChunkMainText,
-                      { fontWeight: '500' },
+                      { fontFamily: 'rubik-semibold' },
                     ]}
                   >
                     {eventTime}
@@ -80,7 +80,7 @@ export class EventDetails extends PureComponent {
                   <Text
                     style={[
                       styles.infoCardChunkMainText,
-                      { fontWeight: '500' },
+                      { fontFamily: 'rubik-semibold' },
                     ]}
                   >
                     {eventVenueMain}
@@ -217,17 +217,11 @@ const styles = StyleSheet.create({
 
   eventNameHero: {
     color: '#FFFFFF',
-    fontSize: 24,
+    fontSize: 28,
     left: 16,
-    fontWeight: '700',
-    fontFamily: 'Roboto',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.8,
-    shadowRadius: 2,
+    fontFamily: 'chivo-bold',
+    marginRight: 20,
+    paddingRight: 20,
   },
 
   infoCard: {
@@ -252,14 +246,15 @@ const styles = StyleSheet.create({
     lineHeight: 26,
     paddingRight: 32,
     paddingLeft: 16,
-    fontFamily: 'Roboto',
+    fontFamily: 'rubik-regular',
+    marginBottom: 2,
   },
 
   infoCardChunkSecondaryText: {
     color: '#505050',
-    fontSize: 14,
+    fontSize: 16,
     paddingRight: 24,
     paddingLeft: 16,
-    fontFamily: 'Roboto',
+    fontFamily: 'rubik-regular',
   },
 });
